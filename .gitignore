@@ -1,0 +1,7 @@
+*.iml
+target
+*.releaseBackup
+.idea
+*.versionsBackup
+!**/archetype-resources/.idea
+!**/archetype-resources/**/*.iml
