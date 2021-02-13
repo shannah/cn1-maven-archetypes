@@ -6,10 +6,10 @@
 [archetype]
 ----
 extends=../cn1app-archetype
-groupId=com.codenameone.archetypes
+groupId=com.codenameone
 artifactId=guibuilder-app-archetype
 version=7.0-SNAPSHOT
-parentGroupId=com.codenameone.archetypes
+parentGroupId=com.codenameone
 parentArtifactId=generated-archetypes
 version=7.0-SNAPSHOT
 ----

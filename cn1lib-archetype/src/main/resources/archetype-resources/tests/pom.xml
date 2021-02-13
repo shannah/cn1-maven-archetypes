@@ -45,7 +45,7 @@
     </distributionManagement>-->
 	  
     <properties>
-        <cn1.version>7.0-SNAPSHOT</cn1.version>
+        <cn1.version>7.0.8-b2</cn1.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	      
         <java.version>1.8</java.version>
@@ -96,32 +96,11 @@
 			
     <repositories>
         
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-codenameone-codenameone</id>
-            <name>bintray</name>
-            <url>https://dl.bintray.com/codenameone/codenameone</url>
-        </repository>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-guardsquare-proguard</id>
-            <name>bintray</name>
-            <url>https://dl.bintray.com/guardsquare/proguard</url>
-        </repository>
+
+
         
     </repositories>
     <pluginRepositories>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-codenameone-codenameone</id>
-            <name>bintray-plugins</name>
-            <url>https://dl.bintray.com/codenameone/codenameone</url>
-        </pluginRepository>
+
     </pluginRepositories>
 </project>

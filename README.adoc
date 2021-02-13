@@ -1,0 +1,61 @@
+= Codename One Maven Archetypes
+
+This project includes maven archetypes for https://www.codenameone.com/[Codename One].
+
+There are two fundamental project types:
+
+link:cn1app-archetype/README.adoc[Codename One Applications]::
+A multi-module Maven project for developing cross-platform mobile applications in Codename One.
+
+link:cn1lib-archetype/README.adoc[Codename One Libraries]::
+A multi-module Maven project for developing Codename One libraries (.cn1libs).
+
+== Creating a New Codename One Application
+
+Use the `cn1app-archetype` to create a new application project. Below is the full `mvn archetype:generate` command.
+
+[source,bash]
+----
+mvn archetype:generate \
+  -DarchetypeGroupId=com.codenameone \
+  -DarchetypeArtifactId=cn1app-archetype \
+  -DarchetypeVersion=LATEST \
+  -DartifactId=$YOUR_PROJECT_ARTIFACT_ID \
+  -DgroupId=$YOUR_PROJECT_GROUP_ID \
+  -Dversion=$YOUR_PROJECT_VERSION \
+  -DmainName=$YOUR_MAIN_CLASS_NAME \
+  -DuseInteractiveMode=false
+----
+
+[TIP]
+====
+If you don't want to remember this whole command, you can simply run `mvn archetype:generate` and follow the interactive prompts.  E.g.
+
+[source,bash]
+----
+mvn archetype:generate \
+  -DarchetypeGroupId=com.codenameone
+  -DarchetypeArtifactId=cn1app-archetype
+----
+
+or Even just `mvn archetype:generate`, and then follow the interactive prompts to filter the list of archetypes.
+====
+
+If `archetype:generate` completes successfully, you will find your new project in the current working directory in a directory named after the artifactId you supplied for the project using the `-DartifactId` parameter.  The project will contain the following useful files to get you started:
+
+README.adoc::
+A readme file with useful information about the project layout and instructions for running and building your project.
+
+run.sh/run.bat::
+Bash and windows batch files for running the project.  (These are just thin wrappers around Maven).
+
+build.sh/build.bat::
+Bash and windows batch files for building the project.  (These are just thin wrappers around Maven).
+
+== Development Instructions
+
+This section includes information for developing this project.  This includes activities like creating new archetypes, building from source, and deploying archetypes to Maven Central.
+
+IMPORTANT: This project should be re-deployed to maven central to correspond with each Codename One release.  See link:RELEASE.adoc[Release Instructions] release instructions.
+
+. link:RELEASE.adoc[Releasing New Versions]

@@ -36,7 +36,7 @@
     </distributionManagement>-->
 	  
     <properties>
-        <cn1.version>7.0.7</cn1.version>
+        <cn1.version>7.0.8-b2</cn1.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	      
         <java.version>1.8</java.version>
@@ -139,34 +139,10 @@
     
 			
     <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>github</id>
-            <name>Github Maven Packages</name>
-            <url>https://maven.pkg.github.com/codenameone/CodenameOne</url>
-        </repository>
 
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-guardsquare-proguard</id>
-            <name>bintray</name>
-            <url>https://dl.bintray.com/guardsquare/proguard</url>
-        </repository>
     </repositories>
     <pluginRepositories>
-        <pluginRepository>
 
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>github</id>
-            <name>Github Maven Packages</name>
-            <url>https://maven.pkg.github.com/codenameone/CodenameOne</url>
-        </pluginRepository>
     </pluginRepositories>
     
         
