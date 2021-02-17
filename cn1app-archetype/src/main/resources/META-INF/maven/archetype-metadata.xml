@@ -27,6 +27,12 @@
         <include>**/*.config</include>
       </includes>
     </fileSet>
+    <fileSet encoding="UTF-8" filtered="true">
+      <directory>.idea</directory>
+      <includes>
+        <include>**</include>
+      </includes>
+    </fileSet>
     <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
