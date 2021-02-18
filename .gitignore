@@ -3,5 +3,6 @@ target
 *.releaseBackup
 .idea
 *.versionsBackup
+.DS_Store
 !**/archetype-resources/.idea
 !**/archetype-resources/**/*.iml

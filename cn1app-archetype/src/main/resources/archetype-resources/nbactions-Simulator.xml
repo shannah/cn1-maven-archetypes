@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <goals>
+                <goal>verify</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <goals>
+                <goal>verify</goal>
+            </goals>
+            <properties>
+                
+                <codename1.platform>javase</codename1.platform>
+                <jpda.listen>true</jpda.listen>
+                <skipTests>true</skipTests>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>debug-simulator</activatedProfile>
+                <activatedProfile>!simulator</activatedProfile>
+            </activatedProfiles>
+        </action>
+    </actions>

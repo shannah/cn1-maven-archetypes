@@ -36,7 +36,9 @@
     <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
+        <include>nb-configuration.xml</include>
         <include>nbactions.xml</include>
+        <include>nbactions-*.xml</include>
         <include>*.sh</include>
         <include>*.bat</include>
         <include>*.adoc</include>
