@@ -34,7 +34,13 @@
                             <goal>compliance-check</goal>
                         </goals>
                     </execution>
-                   
+                    <execution>
+                        <id>build-legacy-cn1lib</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>cn1lib</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

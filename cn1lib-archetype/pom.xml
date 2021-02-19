@@ -14,6 +14,7 @@
   <name>cn1lib-archetype</name>
 
   <build>
+
     <extensions>
       <extension>
         <groupId>org.apache.maven.archetype</groupId>
