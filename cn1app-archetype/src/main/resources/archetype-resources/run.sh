@@ -1,12 +1,17 @@
 #!/bin/bash
+MVNW="./mvnw"
+
 function simulator {
-  "mvn" "verify" "-Psimulator" "-DskipTests" "-Dcodename1.platform=javase"
+  
+  "$MVNW" "verify" "-Psimulator" "-DskipTests" "-Dcodename1.platform=javase"
 }
 function desktop {
-  "mvn" "verify" "-Prun-desktop" "-DskipTests" "-Dcodename1.platform=javase"
+  
+  "$MVNW" "verify" "-Prun-desktop" "-DskipTests" "-Dcodename1.platform=javase"
 }
 function settings {
-  "mvn" "cn:settings"
+  
+  "$MVNW" "cn:settings"
 }
 function help {
   "echo" "-e" "run.sh [COMMAND]"

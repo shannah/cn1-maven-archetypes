@@ -3,6 +3,8 @@ setlocal EnableDelayedExpansion
 setlocal EnableExtensions
 
 
+set MVNW=mvnw.cmd
+
 SET CMD=%1
 if !CMD! EQU  (
   set CMD=simulator
@@ -11,15 +13,15 @@ if !CMD! EQU  (
 
 goto :EOF
 :simulator
-mvn verify -Psimulator -DskipTests -Dcodename1.platform^=javase
+!MVNW! verify -Psimulator -DskipTests -Dcodename1.platform^=javase
 
 goto :EOF
 :desktop
-mvn verify -Prun-desktop -DskipTests -Dcodename1.platform^=javase
+!MVNW! verify -Prun-desktop -DskipTests -Dcodename1.platform^=javase
 
 goto :EOF
 :settings
-mvn cn:settings
+!MVNW! cn:settings
 
 goto :EOF
 :help

@@ -1,40 +1,53 @@
 #!/bin/bash
 set -e
+MVNW="./mvnw"
+
 function mac_desktop {
-  "mvn" "package" "-DskipTests" "-Dcodename1.platform=javase" "-Dcodename1.buildTarget=mac-os-x-desktop"
+  
+  "$MVNW" "package" "-DskipTests" "-Dcodename1.platform=javase" "-Dcodename1.buildTarget=mac-os-x-desktop"
 }
 function windows_desktop {
-  "mvn" "package" "-DskipTests" "-Dcodename1.platform=javase" "-Dcodename1.buildTarget=windows-desktop"
+  
+  "$MVNW" "package" "-DskipTests" "-Dcodename1.platform=javase" "-Dcodename1.buildTarget=windows-desktop"
 }
 function windows_device {
-  "mvn" "package" "-DskipTests" "-Dcodename1.platform=win" "-Dcodename1.buildTarget=windows-device"
+  
+  "$MVNW" "package" "-DskipTests" "-Dcodename1.platform=win" "-Dcodename1.buildTarget=windows-device"
 }
 function uwp {
+  
   "windows_device" 
 }
 function javascript {
-  "mvn" "package" "-DskipTests" "-Dcodename1.platform=javascript" "-Dcodename1.buildTarget=javascript"
+  
+  "$MVNW" "package" "-DskipTests" "-Dcodename1.platform=javascript" "-Dcodename1.buildTarget=javascript"
 }
 function android {
-  "mvn" "package" "-DskipTests" "-Dcodename1.platform=android" "-Dcodename1.buildTarget=android-device"
+  
+  "$MVNW" "package" "-DskipTests" "-Dcodename1.platform=android" "-Dcodename1.buildTarget=android-device"
 }
 function xcode {
-  "mvn" "package" "-DskipTests" "-Dcodename1.platform=ios" "-Dcodename1.buildTarget=ios-source"
+  
+  "$MVNW" "package" "-DskipTests" "-Dcodename1.platform=ios" "-Dcodename1.buildTarget=ios-source"
 }
 function ios_source {
   "xcode" 
 }
 function android_source {
-  "mvn" "package" "-DskipTests" "-Dcodename1.platform=android" "-Dcodename1.buildTarget=android-source"
+  
+  "$MVNW" "package" "-DskipTests" "-Dcodename1.platform=android" "-Dcodename1.buildTarget=android-source"
 }
 function ios {
-  "mvn" "package" "-DskipTests" "-Dcodename1.platform=ios" "-Dcodename1.buildTarget=ios-device"
+  
+  "$MVNW" "package" "-DskipTests" "-Dcodename1.platform=ios" "-Dcodename1.buildTarget=ios-device"
 }
 function ios_release {
-  "mvn" "package" "-DskipTests" "-Dcodename1.platform=ios" "-Dcodename1.buildTarget=ios-device-release"
+  
+  "$MVNW" "package" "-DskipTests" "-Dcodename1.platform=ios" "-Dcodename1.buildTarget=ios-device-release"
 }
 function jar {
-  "case" "mvn" "-Pexecutable-jar" "package" "-Dcodename1.platform=javase" "-DskipTests"
+  
+  "case" "$MVNW" "-Pexecutable-jar" "package" "-Dcodename1.platform=javase" "-DskipTests"
 }
 function help {
   "echo" "-e" "build.sh [COMMAND]"
@@ -75,7 +88,8 @@ function help {
   "echo" "-e" "    *Javascript builds are an Enterprise user feature"
 }
 function settings {
-  "mvn" "cn:settings"
+  
+  "$MVNW" "cn:settings"
 }
 CMD="$1"
 

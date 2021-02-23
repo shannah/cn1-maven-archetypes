@@ -4,6 +4,8 @@ setlocal EnableExtensions
 
 
 
+set MVNW=mvnw.cmd
+
 SET CMD=%1
 if !CMD! EQU  (
   set CMD=jar
@@ -12,15 +14,15 @@ if !CMD! EQU  (
 
 goto :EOF
 :mac_desktop
-mvn package -DskipTests -Dcodename1.platform^=javase -Dcodename1.buildTarget^=mac-os-x-desktop
+!MVNW! package -DskipTests -Dcodename1.platform^=javase -Dcodename1.buildTarget^=mac-os-x-desktop
 
 goto :EOF
 :windows_desktop
-mvn package -DskipTests -Dcodename1.platform^=javase -Dcodename1.buildTarget^=windows-desktop
+!MVNW! package -DskipTests -Dcodename1.platform^=javase -Dcodename1.buildTarget^=windows-desktop
 
 goto :EOF
 :windows_device
-mvn package -DskipTests -Dcodename1.platform^=win -Dcodename1.buildTarget^=windows-device
+!MVNW! package -DskipTests -Dcodename1.platform^=win -Dcodename1.buildTarget^=windows-device
 
 goto :EOF
 :uwp
@@ -30,15 +32,15 @@ echo | set /p ^=!_1_%~2!
 
 goto :EOF
 :javascript
-mvn package -DskipTests -Dcodename1.platform^=javascript -Dcodename1.buildTarget^=javascript
+!MVNW! package -DskipTests -Dcodename1.platform^=javascript -Dcodename1.buildTarget^=javascript
 
 goto :EOF
 :android
-mvn package -DskipTests -Dcodename1.platform^=android -Dcodename1.buildTarget^=android-device
+!MVNW! package -DskipTests -Dcodename1.platform^=android -Dcodename1.buildTarget^=android-device
 
 goto :EOF
 :xcode
-mvn package -DskipTests -Dcodename1.platform^=ios -Dcodename1.buildTarget^=ios-source
+!MVNW! package -DskipTests -Dcodename1.platform^=ios -Dcodename1.buildTarget^=ios-source
 
 goto :EOF
 :ios_source
@@ -48,19 +50,19 @@ echo | set /p ^=!_1_%~2!
 
 goto :EOF
 :android_source
-mvn package -DskipTests -Dcodename1.platform^=android -Dcodename1.buildTarget^=android-source
+!MVNW! package -DskipTests -Dcodename1.platform^=android -Dcodename1.buildTarget^=android-source
 
 goto :EOF
 :ios
-mvn package -DskipTests -Dcodename1.platform^=ios -Dcodename1.buildTarget^=ios-device
+!MVNW! package -DskipTests -Dcodename1.platform^=ios -Dcodename1.buildTarget^=ios-device
 
 goto :EOF
 :ios_release
-mvn package -DskipTests -Dcodename1.platform^=ios -Dcodename1.buildTarget^=ios-device-release
+!MVNW! package -DskipTests -Dcodename1.platform^=ios -Dcodename1.buildTarget^=ios-device-release
 
 goto :EOF
 :jar
-case mvn -Pexecutable-jar package -Dcodename1.platform^=javase -DskipTests
+case !MVNW! -Pexecutable-jar package -Dcodename1.platform^=javase -DskipTests
 
 goto :EOF
 :help
@@ -103,4 +105,4 @@ echo     *Javascript builds are an Enterprise user feature
 
 goto :EOF
 :settings
-mvn cn:settings
+!MVNW! cn:settings

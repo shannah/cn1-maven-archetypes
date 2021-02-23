@@ -27,6 +27,12 @@
         <include>**/*.config</include>
       </includes>
     </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>.mvn/wrapper</directory>
+      <includes>
+        <include>**</include>
+      </includes>
+    </fileSet>
     <fileSet encoding="UTF-8" filtered="true">
       <directory>.idea</directory>
       <includes>
@@ -42,6 +48,8 @@
         <include>*.sh</include>
         <include>*.bat</include>
         <include>*.adoc</include>
+        <include>mvnw</include>
+        <include>mvnw.cmd</include>
       </includes>
     </fileSet>
   </fileSets>
