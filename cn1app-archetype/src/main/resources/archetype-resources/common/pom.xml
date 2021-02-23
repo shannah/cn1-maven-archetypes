@@ -13,7 +13,7 @@
     <profiles>
         <profile>
         <id>install-codenameone</id>
-        <activation><file><missing>${user.home}/.codenameone</missing></file></activation>
+        <activation><file><missing>${user.home}/.codenameone/guibuilder.jar</missing></file></activation>
         <build>
             <plugins>
                 <plugin>
@@ -30,7 +30,7 @@
                             <configuration>
 
                                 <target name="install-cn1">
-                                    <available file="${user.home}/.codenameone" property="codenameone.present"/>
+                                    <available file="${user.home}/.codenameone/guibuilder.jar" property="codenameone.present"/>
 
                                     <mkdir dir="${user.home}/.codenameone"/>
                                     <mkdir dir="${project.build.directory}/codenameone/tmpProject"/>
