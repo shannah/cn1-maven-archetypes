@@ -1,0 +1,51 @@
+body div.env {
+    display:none;
+    /*
+    border: 1px solid #eaeaea;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    */
+    clear:right;
+
+}
+
+body.env-cli div.env-cli,
+body.env-intellij div.env-intellij,
+body.env-netbeans div.env-netbeans {
+    display:block;
+}
+
+button.env-button {
+    border:none;
+    background-color: transparent;
+    color: #666;
+    font-size: 70%;
+}
+
+body.env-cli button.env-button[for='cli'],
+body.env-intellij button.env-button[for='intellij'],
+body.env-netbeans button.env-button[for='netbeans']{
+    background-color: #ccc;
+    color:black
+}
+
+div.env-buttons {
+    float:right;
+    background-color: #efefef;
+    margin: 20px;
+}
+
+div.env.sect5 > h6,
+div.env.sect4 > h5,
+div.env.sect3 > h4,
+div.env.sect2 > h3,
+div.section-wrap-h1 > h1,
+ div.section-wrap-h2 > h2,
+ div.section-wrap-h3 > h3,
+ div.section-wrap-h4 > h4,
+ div.section-wrap-h5 > h5,
+  div.section-wrap-h6 > h6 {
+    display:none;
+}
