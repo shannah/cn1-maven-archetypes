@@ -490,7 +490,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#api">Appendix D: API</a>
 <ul class="sectlevel2">
 <li><a href="#_limitations">Limitations</a></li>
-<li><a href="#_kotlin_api_support">Kotlin API Support</a></li>
 <li><a href="#_add_on_libraries">Add-on Libraries</a></li>
 </ul>
 </li>
@@ -502,6 +501,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Java App Template is a maven starter project for building a cross-platform, native mobile app in Java, using <a href="https://www.codenameone.com">Codename One</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This project uses Java as the main app programming language.  If you would prefer to use Kotlin, check out the <a href="https://shannah.github.io/cn1app-archetype-kotlin-template/getting-started.html">Bare-bones Kotlin App template</a>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><strong>Features of this project</strong></p>
@@ -613,7 +624,7 @@ This project includes a Maven wrapper script that will automatically install Mav
 </div>
 </li>
 <li>
-<p>Enter a "Package" and "Main Class" for your app.  The package will be used both for your App ID, when you submit your app to the app stores, and for your maven project&#8217;s <code>groupID</code>.  The "Main Class" is the name of the "main" Kotlin class for your app.</p>
+<p>Enter a "Package" and "Main Class" for your app.  The package will be used both for your App ID, when you submit your app to the app stores, and for your maven project&#8217;s <code>groupID</code>.  The "Main Class" is the name of the "main" Java class for your app.</p>
 </li>
 <li>
 <p>Press "Download"</p>
@@ -2473,12 +2484,6 @@ The Codename One source is open source.  Released under GPLv2 with Classpath Exc
 </div>
 </div>
 <div class="sect2">
-<h3 id="_kotlin_api_support">Kotlin API Support</h3>
-<div class="paragraph">
-<p>Codename One apps support the [Kotlin Standard Library](<a href="https://kotlinlang.org/api/latest/jvm/stdlib/" class="bare">https://kotlinlang.org/api/latest/jvm/stdlib/</a>).  Kotlin support is still relatively new, so are still discovering which libraries are compatible.  APIs that rely on reflection will not be supported, but most other libraries should work.</p>
-</div>
-</div>
-<div class="sect2">
 <h3 id="_add_on_libraries">Add-on Libraries</h3>
 <div class="paragraph">
 <p>Add-on libraries can be added to your library in the common/pom.xml file, however, if you use APIs that are not supported by Codename One (e.g. which use reflection), then your app will fail to build.</p>
@@ -2495,7 +2500,7 @@ The Codename One source is open source.  Released under GPLv2 with Classpath Exc
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-02-26 08:03:07 -0800
+Last updated 2021-02-26 08:08:07 -0800
 </div>
 </div>
 </body>
