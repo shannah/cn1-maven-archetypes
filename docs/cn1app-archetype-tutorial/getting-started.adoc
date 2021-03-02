@@ -661,9 +661,12 @@ Then press the "run" (image:images/intellij-run-icon.png[]) button.
 <env netbeans></env>
 ++++
 
-Right click on the project in the project inspector, and select "Run Maven" > "Build iOS App" as shown below:
 
-image::images/netbeans-build-ios-app.png[]
+Click on the Configuration menu on the tool bar and select "iOS App (Debug)" as shown below:
+
+image::images/netbeans-select-ios-app-debug-config.png[]
+
+Then press the "Run" image:images/netbeans-run-icon.png[] button.
 
 ===== Downloading Result from the Build Server
 
@@ -717,9 +720,11 @@ Then press the "run" (image:images/intellij-run-icon.png[]) button.
 <env netbeans></env>
 ++++
 
-Right click on the project in the project inspector, and select "Run Maven" > "Build iOS App (Release)" as shown below:
+Click on the Configuration menu on the toolbar and select "iOS App (Release)" as shown below:
 
-image::images/netbeans-build-ios-app-release.png[]
+image::images/netbeans-select-ios-app-config.png[]
+
+The press the "Run" image:images/netbeans-run-icon.png[] button.
 
 
 ===== Downloading Result from the Build Server
@@ -819,7 +824,7 @@ You can proceed to open and build the project in Android Studio.
 
 The Codename One build server will generate an Android app (.apk and .aab) that you can install directly onto your Android device for debugging, or that you can submit to the Google play store.  Unlike the <<android-local-builds, local build option>>, it doesn't require you to install any development tools on your computer beyond the basic JDK install.  Android builds are available with a free Codename One account, which you can create at https://cloud.codenameone.com.
 
-====== Command-line
+===== Command-line
 ++++
 <env cli></env>
 ++++
@@ -848,7 +853,7 @@ mvn package -Dcodename1.platform=android -Dcodename1.buildTarget=android-device
 ----
 ====
 
-====== IntelliJ IDEA
+===== IntelliJ IDEA
 ++++
 <env intellij></env>
 ++++
@@ -859,14 +864,16 @@ image::images/intellij-android-build.png[]
 
 Then press the "run" (image:images/intellij-run-icon.png[]) button.
 
-====== NetBeans
+===== NetBeans
 ++++
 <env netbeans></env>
 ++++
 
-Right click on the project in the project inspector, and select "Run Maven" > "Build Android App" as shown below:
+Click on the configuration menu on the tool bar and select "Android App" as shown below:
 
-image::images/netbeans-build-android.png[]
+image::images/netbeans-select-android-config.png[]
+
+Then press the "run" image:images/netbeans-run-icon.png[] button.
 
 ===== Downloading Result from the Build Server
 
@@ -924,9 +931,11 @@ After you submit the build, you can follow the progress on the Codename One buil
 <env netbeans></env>
 ++++
 
-Right-click on the project in the project inspector, and select "Run Maven" > "Build Mac Desktop App" as shown below:
+Click on the configuration menu on the tool bar and select "Mac Desktop App" as shown below:
 
-image::images/netbeans-buld-mac.png[]
+image::images/netbeans-select-mac-desktop-config.png[]
+
+Then press the "run" image:images/netbeans-run-icon.png[] button.
 
 After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
 
@@ -985,9 +994,11 @@ After you submit the build, you can follow the progress on the Codename One buil
 <env netbeans></env>
 ++++
 
-Right-click on the project icon in the project inspector, and select "Run Maven" > "Build Windows Desktop App" as shown below:
+Click on the configuration menu on the tool bar and select "Windows Desktop App" as shown below:
 
-image::images/netbeans-windows-desktop-build.png[]
+image::images/netbeans-select-windows-config.png[]
+
+Then press the "run" image:images/netbeans-run-icon.png[] button.
 
 After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
 
@@ -1051,9 +1062,11 @@ After you submit the build, you can follow the progress on the Codename One buil
 <env netbeans></env>
 ++++
 
-Right-click on the project icon in the project inspector, and select "Run Maven" > "Build Windows UWP App"
+Click on the configuration menu on the tool bar and select "Windows UWP App" as shown below:
 
-image::images/netbeans-windows-uwp-build.png[]
+image::images/netbeans-select-windows-uwp-config.png[]
+
+Then press the "run" image:images/netbeans-run-icon.png[] button.
 
 After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
 
@@ -1120,9 +1133,11 @@ After you submit the build, you can follow the progress on the Codename One buil
 <env netbeans></env>
 ++++
 
-Right-click on the project icon in the project inspector, and select "Run Maven" > "Build Web App"
+Click on the configuration menu on the tool bar and select "Javascript App" as shown below:
 
-image::images/netbeans-build-web-app.png[]
+image::images/netbeans-select-javascript-config.png[]
+
+Then press the "run" image:images/netbeans-run-icon.png[] button.
 
 After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
 
