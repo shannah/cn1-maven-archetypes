@@ -140,7 +140,6 @@
             <option name="jreName" value="#USE_PROJECT_JDK" />
             <option name="mavenProperties">
               <map>
-                <entry key="codename1.buildTarget" value="jar" />
                 <entry key="codename1.platform" value="javase" />
               </map>
             </option>
@@ -162,7 +161,9 @@
             </option>
             <option name="pomFileName" />
             <option name="profilesMap">
-              <map />
+              <map>
+                <entry key="executable-jar" value="true" />
+              </map>
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$" />

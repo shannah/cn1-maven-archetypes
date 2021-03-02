@@ -62,7 +62,7 @@ goto :EOF
 
 goto :EOF
 :jar
-case !MVNW! -Pexecutable-jar package -Dcodename1.platform^=javase -DskipTests
+!MVNW! -Pexecutable-jar package -Dcodename1.platform^=javase -DskipTests
 
 goto :EOF
 :help

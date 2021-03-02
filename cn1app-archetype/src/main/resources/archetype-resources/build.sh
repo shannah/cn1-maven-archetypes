@@ -47,7 +47,7 @@ function ios_release {
 }
 function jar {
   
-  "case" "$MVNW" "-Pexecutable-jar" "package" "-Dcodename1.platform=javase" "-DskipTests"
+  "$MVNW" "-Pexecutable-jar" "package" "-Dcodename1.platform=javase" "-DskipTests"
 }
 function help {
   "echo" "-e" "build.sh [COMMAND]"
