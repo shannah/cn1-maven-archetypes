@@ -17,8 +17,18 @@
         <maven.compiler.target>8</maven.compiler.target>
 
     </properties>
-    
-    
+
+    <!-- This is the dependencies section where you should add
+    your jar and cn1lib dependencies if your library depends on other
+    cn1libs -->
+    <dependencies>
+        <dependency>
+            <groupId>com.codenameone</groupId>
+            <artifactId>codenameone-core</artifactId>
+            <version>${cn1.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -47,14 +57,7 @@
 
         
     </build>
-    <dependencies>
-        <dependency>
-            <groupId>com.codenameone</groupId>
-            <artifactId>codenameone-core</artifactId>
-            <version>${cn1.version}</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+
     <profiles>
         <!-- 
             == Kotlin Support 

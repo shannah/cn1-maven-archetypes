@@ -10,7 +10,23 @@
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
     <packaging>jar</packaging>
+
+    <!-- Add your cn1lib dependencies to this section -->
+    <dependencies>
+        <dependency>
+            <groupId>com.codenameone</groupId>
+            <artifactId>codenameone-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- INJECT DEPENDENCIES -->
+    </dependencies>
+
+    <!-- The following are profiles to cover special cases -->
     <profiles>
+
+        <!-- A profile to install Codename One support libraries to your home directory
+            if they aren't installed yet. -->
         <profile>
         <id>install-codenameone</id>
         <activation><file><missing>${user.home}/.codenameone/guibuilder.jar</missing></file></activation>
@@ -50,7 +66,8 @@
         </build>
 
     </profile>
-
+        <!-- A profile to add kotlin support.  Activated if the src/main/kotlin
+            directory exists -->
         <profile>
             <id>kotlin</id>
             <activation>
@@ -133,7 +150,7 @@
             </build>
         </profile>
         
-        
+
         <profile>
             
             <id>javase</id>
@@ -270,17 +287,6 @@
             </properties>
         </profile>
     </profiles>
-    <dependencies>
-        <dependency>
-            <groupId>com.codenameone</groupId>
-            <artifactId>codenameone-core</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-
-
-        <!-- INJECT DEPENDENCIES -->
-    </dependencies>
 
     <build>
         <plugins>
@@ -342,11 +348,11 @@
                 </executions>
 
             </plugin>
-            
-            
+
+
         </plugins>
 
-        
+
     </build>
 
     
