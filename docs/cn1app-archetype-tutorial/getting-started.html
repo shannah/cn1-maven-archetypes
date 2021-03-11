@@ -1658,8 +1658,16 @@ If you use the "Android App" build target, which uses the Codename One build ser
 </tr>
 </table>
 </div>
+<div class="sect4">
+<h5 id="_generating_an_android_studio_project">Generating an Android Studio Project</h5>
+<div class="sect5">
+<h6 id="android-local-builds-cli">Command-line</h6>
+<env cli ></env>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Setting up the Environment</div>
 <div class="paragraph">
-<p>Additionally you need to have the following environment variables set:</p>
+<p>In order to build the Android gradle project, need to have the following environment variables set:</p>
 </div>
 <div class="dlist">
 <dl>
@@ -1673,11 +1681,23 @@ If you use the "Android App" build target, which uses the Codename One build ser
 </dd>
 </dl>
 </div>
-<div class="sect4">
-<h5 id="_generating_an_android_studio_project">Generating an Android Studio Project</h5>
-<div class="sect5">
-<h6 id="android-local-builds-cli">Command-line</h6>
-<env cli ></env>
+<div class="paragraph">
+<p>How you set these environment variables is up to you, and is beyond the scope of this tutorial.  If you are unsure how to set environment variables, you should be able to find lots of resources on the internet by searching for "Setting environment variables on [Your OS Name HERE]"</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+You can download the Android SDK <a href="https://developer.android.com/studio/">here</a>, and you can find instructions on installing Gradle <a href="https://gradle.org/install/">here</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Use the <code>build.sh</code> or <code>build.bat</code> script in the project&#8217;s root directory as follows:</p>
 </div>
@@ -1703,6 +1723,60 @@ If you use the "Android App" build target, which uses the Codename One build ser
 <div class="sect5">
 <h6 id="android-local-builds-intellij">IntelliJ IDEA</h6>
 <env intellij></env>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Setting up Environment</div>
+<div class="paragraph">
+<p>Before you can build the Android gradle project, you need to make sure that you have defined the <code>ANDROID_HOME</code> environment variable to point to your Android SDK.</p>
+</div>
+<div class="paragraph">
+<p>Also, you need to ensure that either <code>gradle</code> is in your <code>PATH</code> or that you have also defined the <code>GRADLE_HOME</code> enviroment variable to point to your gradle installation.</p>
+</div>
+<div class="paragraph">
+<p>To do this, click on the "Configuration" menu in the toolbar as shown here:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/intellij-edit-configurations-menuitem.png" alt="intellij edit configurations menuitem">
+</div>
+</div>
+<div class="paragraph">
+<p>In the resulting dialog, select "Maven" &gt; "Local Builds" &gt; "Gradle Android Project" in the left menu, and then select the "Runner" tab on the right panel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/intellij-edit-android-source-runner-env.png" alt="intellij edit android source runner env">
+</div>
+</div>
+<div class="paragraph">
+<p>In the "Environment Variables" field, enter the environment variables (<code>ANDROID_HOME</code> and <code>GRADLE_HOME</code>), separated by a semi-colon, as shown in the screenshot above.</p>
+</div>
+<div class="paragraph">
+<p>You can also click on the
+<span class="image"><img src="images/intellij-edt-environment-variables-icon.png" alt="intellij edt environment variables icon"></span> icon on the right side of the text field, which will display a nicer dialog for editing environment variables as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/intellij-edit-environment-vars-dialog.png" alt="intellij edit environment vars dialog">
+</div>
+</div>
+<div class="paragraph">
+<p>Click "OK" when done to save your changes.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+You can download the Android SDK <a href="https://developer.android.com/studio/">here</a>, and you can find instructions on installing Gradle <a href="https://gradle.org/install/">here</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Click on the "Configuration" menu in the upper right toolbar, and select "Local Builds" &gt; "Android Gradle Project" as shown below:</p>
 </div>
@@ -1724,6 +1798,46 @@ If you use the "Android App" build target, which uses the Codename One build ser
 <div class="sect5">
 <h6 id="android-local-builds-netbeans">NetBeans</h6>
 <env netbeans></env>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Setting up the Environment</div>
+<div class="paragraph">
+<p>Before you can build the project for the first time, you need to define the <code>ANDROID_HOME</code> environment to point to your android-sdk directory, and your <code>GRADLE_HOME</code> environment variable to point to your gradle installation.</p>
+</div>
+<div class="paragraph">
+<p>You can do that by right clicking on the root project in the project inspector and selecting "Properties".  This will open the "Project Properties" dialog.</p>
+</div>
+<div class="paragraph">
+<p>Select "Configuration" on the left panel, and "Android Gradle Project" in the "Configuration" list on the right.  Then press the "Edit.." button.</p>
+</div>
+<div class="paragraph">
+<p>This will open another dialog on top called "Edit Configuration" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/netbeans-edit-configuration-env.png" alt="netbeans edit configuration env">
+</div>
+</div>
+<div class="paragraph">
+<p>In the "Set Properties" field, add entries for <code>Env.ANDROID_HOME</code> and <code>Env.GRADLE_HOME</code>.</p>
+</div>
+<div class="paragraph">
+<p>Click "OK" when done.  Then click "OK" again to close the Project Properties dialog.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+You can download the Android SDK <a href="https://developer.android.com/studio/">here</a>, and you can find instructions on installing Gradle <a href="https://gradle.org/install/">here</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Press on the configuration menu on the toolbar and select "Android Gradle Project" as shown below:</p>
 </div>
@@ -2521,7 +2635,7 @@ The Codename One source is open source.  Released under GPLv2 with Classpath Exc
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-02 08:46:05 -0800
+Last updated 2021-03-11 08:50:43 -0800
 </div>
 </div>
 </body>

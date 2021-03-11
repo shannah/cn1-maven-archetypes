@@ -752,15 +752,6 @@ Building an Android app locally requires that you have Android developer tools a
 
 TIP: If you use the "Android App" build target, which uses the Codename One build server, you don't need to have any special development tools installed because the Android-specific portion of the build is handled on the build server, which has the full toolchain already installed.  See <<android-server-builds>>.
 
-Additionally you need to have the following environment variables set:
-
-`ANDROID_HOME`::
-should point to android sdk.
-
-`GRADLE_HOME`::
-should point to gradle home. Alternatively, you can just add the gradle executable to your `PATH` environment variable.
-
-
 ===== Generating an Android Studio Project
 
 [#android-local-builds-cli]
@@ -768,6 +759,26 @@ should point to gradle home. Alternatively, you can just add the gradle executab
 ++++
 <env cli ></env>
 ++++
+
+.Setting up the Environment
+[sidebar]
+****
+
+In order to build the Android gradle project, need to have the following environment variables set:
+
+`ANDROID_HOME`::
+should point to android sdk.
+
+`GRADLE_HOME`::
+should point to gradle home. Alternatively, you can just add the gradle executable to your `PATH` environment variable.
+
+How you set these environment variables is up to you, and is beyond the scope of this tutorial.  If you are unsure how to set environment variables, you should be able to find lots of resources on the internet by searching for "Setting environment variables on [Your OS Name HERE]"
+
+TIP: You can download the Android SDK https://developer.android.com/studio/[here], and you can find instructions on installing Gradle https://gradle.org/install/[here].
+
+
+****
+
 
 Use the `build.sh` or `build.bat` script in the project's root directory as follows:
 
@@ -793,6 +804,34 @@ If all went well you can proceed to open the Android Studio project and build th
 <env intellij></env>
 ++++
 
+.Setting up Environment
+[sidebar]
+****
+Before you can build the Android gradle project, you need to make sure that you have defined the `ANDROID_HOME` environment variable to point to your Android SDK.
+
+Also, you need to ensure that either `gradle` is in your `PATH` or that you have also defined the `GRADLE_HOME` enviroment variable to point to your gradle installation.
+
+To do this, click on the "Configuration" menu in the toolbar as shown here:
+
+image::images/intellij-edit-configurations-menuitem.png[]
+
+In the resulting dialog, select "Maven" > "Local Builds" > "Gradle Android Project" in the left menu, and then select the "Runner" tab on the right panel.
+
+image::images/intellij-edit-android-source-runner-env.png[]
+
+In the "Environment Variables" field, enter the environment variables (`ANDROID_HOME` and `GRADLE_HOME`), separated by a semi-colon, as shown in the screenshot above.
+
+You can also click on the
+image:images/intellij-edt-environment-variables-icon.png[] icon on the right side of the text field, which will display a nicer dialog for editing environment variables as shown below:
+
+image::images/intellij-edit-environment-vars-dialog.png[]
+
+Click "OK" when done to save your changes.
+
+TIP: You can download the Android SDK https://developer.android.com/studio/[here], and you can find instructions on installing Gradle https://gradle.org/install/[here].
+
+****
+
 Click on the "Configuration" menu in the upper right toolbar, and select "Local Builds" > "Android Gradle Project" as shown below:
 
 image::images/intellij-android-gradle-build.png[]
@@ -808,6 +847,27 @@ You can proceed to open and build the project in Android Studio.
 ++++
 <env netbeans></env>
 ++++
+
+.Setting up the Environment
+[sidebar]
+****
+Before you can build the project for the first time, you need to define the `ANDROID_HOME` environment to point to your android-sdk directory, and your `GRADLE_HOME` environment variable to point to your gradle installation.
+
+You can do that by right clicking on the root project in the project inspector and selecting "Properties".  This will open the "Project Properties" dialog.
+
+Select "Configuration" on the left panel, and "Android Gradle Project" in the "Configuration" list on the right.  Then press the "Edit.." button.
+
+This will open another dialog on top called "Edit Configuration" as shown below:
+
+image::images/netbeans-edit-configuration-env.png[]
+
+In the "Set Properties" field, add entries for `Env.ANDROID_HOME` and `Env.GRADLE_HOME`.
+
+Click "OK" when done.  Then click "OK" again to close the Project Properties dialog.
+
+TIP: You can download the Android SDK https://developer.android.com/studio/[here], and you can find instructions on installing Gradle https://gradle.org/install/[here].
+
+****
 
 Press on the configuration menu on the toolbar and select "Android Gradle Project" as shown below:
 
