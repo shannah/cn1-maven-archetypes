@@ -36,6 +36,7 @@
     </distributionManagement>-->
 	  
     <properties>
+        <cn1.plugin.version>7.0.10-SNAPSHOT</cn1.plugin.version>
         <cn1.version>7.0.10-SNAPSHOT</cn1.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	      
@@ -131,7 +132,7 @@
                     <plugin>
                         <groupId>com.codenameone</groupId>
                         <artifactId>codenameone-maven-plugin</artifactId>
-                        <version>${cn1.version}</version>
+                        <version>${cn1.plugin.version}</version>
                     </plugin>
         </plugins>
         </pluginManagement>

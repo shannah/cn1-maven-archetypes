@@ -48,7 +48,7 @@ public class ${mainName} {
             current.show();
             return;
         }
-        //WebSocket sock;
+
         Form hi = new Form("Hi World", BoxLayout.y());
         hi.add(new Label("Hello World"));
 
