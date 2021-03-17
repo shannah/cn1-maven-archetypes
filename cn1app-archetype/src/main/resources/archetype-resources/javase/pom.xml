@@ -625,5 +625,23 @@
           </build>
       </profile>
   </profiles>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>codenameone-maven-plugin</artifactId>
+                <groupId>com.codenameone</groupId>
+                <version>${cn1.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>add-se-sources</id>
+                        <goals>
+                            <goal>generate-javase-sources</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
   
 </project>

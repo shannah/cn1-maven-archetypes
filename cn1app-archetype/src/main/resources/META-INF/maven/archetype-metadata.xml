@@ -4,13 +4,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <requiredProperties>
-    <requiredProperty key="cn1-version">
-      <defaultValue>7.0-SNAPSHOT</defaultValue>
+    <requiredProperty key="cn1Version">
+      <defaultValue>7.0.11-SNAPSHOT</defaultValue>
     </requiredProperty>
-    <requiredProperty key="kotlin">
-      <defaultValue>false</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="kotlin-version">
+    <requiredProperty key="kotlinVersion">
       <defaultValue>1.3.72</defaultValue>
     </requiredProperty>
 
@@ -19,6 +16,7 @@
     </requiredProperty>
 
   </requiredProperties>
+
   <fileSets>
 
     <fileSet encoding="UTF-8">
