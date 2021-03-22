@@ -21,7 +21,14 @@
       <codename1.defaultBuildTarget>ios-device</codename1.defaultBuildTarget>
   </properties>
     <build>
-
+        <resources>
+            <resource>
+                <directory>src/main/objectivec</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>com.codenameone</groupId>

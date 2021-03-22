@@ -21,7 +21,14 @@
       <codename1.defaultBuildTarget>javascript</codename1.defaultBuildTarget>
   </properties>
     <build>
-
+        <resources>
+            <resource>
+                <directory>src/main/javascript</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>com.codenameone</groupId>
