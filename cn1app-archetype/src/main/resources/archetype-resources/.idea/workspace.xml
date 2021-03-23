@@ -128,6 +128,46 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="Update Codename One" type="MavenRunConfiguration" factoryName="Maven" folderName="Tools">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="delegateBuildToMaven" value="true" />
+            <option name="environmentProperties">
+              <map />
+            </option>
+            <option name="jreName" value="#USE_PROJECT_JDK" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="passParentEnv" value="true" />
+            <option name="runMavenInBackground" value="true" />
+            <option name="skipTests" value="true" />
+            <option name="vmOptions" value="" />
+          </MavenRunnerSettings>
+        </option>
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="cn1:update" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="Cross-platform (JavaSE) Desktop App" type="MavenRunConfiguration" factoryName="Maven" folderName="Local Builds">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -682,6 +722,7 @@
       <item itemvalue="Maven.Gradle Android Project" />
       <item itemvalue="Maven.Generate Native Interfaces" />
       <item itemvalue="Maven.Codename One Settings" />
+      <item itemvalue="Maven.Update Codename One" />
       <item itemvalue="Maven.Run in Simulator" />
       <item itemvalue="Maven.Run as Desktop App" />
     </list>

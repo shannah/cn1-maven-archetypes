@@ -130,7 +130,13 @@
 
         </properties>
     </action>
-
+    <action>
+        <actionName>CUSTOM-Update Codename One</actionName>
+        <displayName>Update Codename One</displayName>
+        <goals>
+            <goal>cn1:update</goal>
+        </goals>
+    </action>
 
 
 

@@ -24,6 +24,10 @@ goto :EOF
 !MVNW! cn:settings
 
 goto :EOF
+:update
+!MVNW! cn:update
+
+goto :EOF
 :help
 echo run.sh [COMMAND]
 echo Commands:
@@ -31,3 +35,7 @@ echo   simulator
 echo     Runs app using Codename One Simulator
 echo   desktop
 echo     Runs app as a desktop app.
+echo   settings
+echo     Opens Codename One settings
+echo   update
+echo     Update Codename One libraries
