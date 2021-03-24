@@ -56,6 +56,6 @@ Bash and windows batch files for building the project.  (These are just thin wra
 
 This section includes information for developing this project.  This includes activities like creating new archetypes, building from source, and deploying archetypes to Maven Central.
 
-IMPORTANT: This project should be re-deployed to maven central to correspond with each Codename One release.  See link:RELEASE.adoc[Release Instructions] release instructions.
+IMPORTANT: This project should be re-deployed to maven central to correspond with each Codename One release.  See lhttps://github.com/codenameone/CodenameOne/tree/master/maven#deploying-to-maven-central[Release Instructions] release instructions.
 
-. link:RELEASE.adoc[Releasing New Versions]
+. https://github.com/codenameone/CodenameOne/tree/master/maven#deploying-to-maven-central[Releasing New Versions]
