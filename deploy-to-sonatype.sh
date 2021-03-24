@@ -16,5 +16,34 @@
 # Typical Workflow is:
 # bash update-version 8.0.1 && bash deploy-to-sonatype.sh && bash update-version 8.0.2-SNAPSHOT
 set -e
-export GPG_TTY=$(tty)
-mvn deploy -Psign-artifacts
+version=$(bash print-version.sh)
+if [[ "$version" == *-SNAPSHOT ]]; then
+  echo "This is a snapshot version so not deploying"
+else
+
+  # We need to install this version of Codename One so that it will build
+  # correctly.
+  if [ ! -f $HOME/.m2/repository/com/codenameone/codenameone-maven-plugin/${version}/codenameone-maven-plugin-${version}.jar ]; then
+    echo "codenameone-maven-plugin v${version} not installed.  Trying to install now.."
+    SCRIPTPATH=$(pwd)
+    if [ ! -d target ]; then
+      mkdir target
+    fi
+    cd target
+    curl -L https://github.com/codenameone/CodenameOne/archive/refs/tags/v${version}.zip > master.zip
+    unzip master.zip
+    rm master.zip
+    cd CodenameOne-${version}/maven
+    mvn install
+    cd $SCRIPTPATH
+    echo "codeameone-maven-plugin v${version} successfully installed."
+  fi
+
+  echo "Deploying version ${version} to sonatype staging"
+  MAVEN_ARGS="-X"
+  if [ ! -z $MAVEN_GPG_PASSPHRASE ]; then
+    MAVEN_ARGS="-Dgpg.passphrase=$MAVEN_GPG_PASSPHRASE -X"
+  fi
+  export GPG_TTY=$(tty)
+  mvn deploy -Psign-artifacts $MAVEN_ARGS
+fi
