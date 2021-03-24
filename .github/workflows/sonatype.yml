@@ -8,6 +8,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install xvfb
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v1
         with:
@@ -20,7 +22,7 @@ jobs:
 
       - name: Deploy with Maven
         run: |
-          bash deploy-to-sonatype.sh
+          xvfb-run -a bash deploy-to-sonatype.sh
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
