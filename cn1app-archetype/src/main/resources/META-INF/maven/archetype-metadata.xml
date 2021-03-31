@@ -48,6 +48,7 @@
         <include>*.adoc</include>
         <include>mvnw</include>
         <include>mvnw.cmd</include>
+        <include>*.launch</include>
       </includes>
     </fileSet>
   </fileSets>
