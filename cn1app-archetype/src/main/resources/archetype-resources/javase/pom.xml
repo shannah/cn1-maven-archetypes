@@ -412,6 +412,112 @@
               </plugins>
           </build>
       </profile>
+
+      <profile>
+          <!-- Profile used for debugging the Simulator in Eclipse. -->
+          <id>debug-eclipse</id>
+          <properties>
+              <codename1.platform>javase</codename1.platform>
+              <exec.mainClass>com.codename1.impl.javase.Simulator</exec.mainClass>
+              <jpda.listen>true</jpda.listen>
+          </properties>
+          <dependencies>
+              <dependency>
+                  <groupId>com.codenameone</groupId>
+                  <artifactId>codenameone-core</artifactId>
+                  <scope>compile</scope>
+              </dependency>
+              <dependency>
+                  <groupId>com.codenameone</groupId>
+                  <artifactId>codenameone-javase</artifactId>
+                  <scope>compile</scope>
+              </dependency>
+          </dependencies>
+          <build>
+              <plugins>
+                  <plugin>
+                      <!-- Set some properties required by the simulator, such as the
+                            main class, and the CSS args. -->
+                      <groupId>com.codenameone</groupId>
+                      <artifactId>codenameone-maven-plugin</artifactId>
+                      <executions>
+                          <execution>
+                              <id>prepare-simulator-environment</id>
+                              <phase>initialize</phase>
+                              <goals>
+                                  <goal>prepare-simulator-classpath</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                  </plugin>
+
+                  <plugin>
+                      <groupId>org.codehaus.mojo</groupId>
+                      <artifactId>exec-maven-plugin</artifactId>
+                      <configuration>
+                          <workingDirectory>${basedir}/../common</workingDirectory>
+
+                          <executable>java</executable>
+                          <longClasspath>true</longClasspath>
+                          <arguments>
+                              <argument>-XX:MaxPermSize=128M</argument>
+                              <!-- Parameters used for Debugging from NetBeans -->
+                              <argument>-Xdebug</argument>
+                              <argument>-Xrunjdwp:transport=dt_socket,server=y,address=${jpda.address},suspend=y</argument>
+                              <argument>-Xmx1024M</argument>
+                              <argument>-Xmx1024M</argument>
+                              <!-- Pass the locations of CN1 system dependencies so that
+                                    the simulator can find them.  Most of these properties
+                                    are set in the prepare-simulator-classpath goal
+                                    of the codenameone-maven-plugin which was run during
+                                    the initialize phase. -->
+
+
+                              <!-- The location of CEF.  This property is set in the
+                                  prepare-simulator-classpath goal, and the CEF files are
+                                  managed by maven. -->
+                              <argument>-Dcef.dir=${cef.dir}</argument>
+
+                              <!-- The location of the designer jar.  This property is set in the
+                                  prepare-simulator-classpath goal, and the file itself is managed
+                                  by maven. -->
+                              <argument>-Dcodename1.designer.jar=${codename1.designer.jar}</argument>
+
+                              <!-- The location of the theme.css file.  This property
+                                  is set in the prepare-simulator-classpath goal.  This is used by the simulator
+                                  for watching CSS for changes. -->
+                              <argument>-Dcodename1.css.compiler.args.input=${codename1.css.compiler.args.input}</argument>
+
+                              <!-- The location of the output theme.res file (where the CSS compiles
+                                  the theme.css file to. This property is set in the prepare-simulator-classpath goal.
+                                  This is used by the simulator for watching CSS for changes. -->
+                              <argument>-Dcodename1.css.compiler.args.output=${codename1.css.compiler.args.output}</argument>
+
+                              <!-- The location of the CSS merge file.  This is where all of the CSS for all
+                                  cn1libs and the main project are merged together for the CSS compiler.  This is the
+                                  *actual* input to the CSS compiler.  This is used by the simulator to watch CSS for changes. -->
+                              <argument>-Dcodename1.css.compiler.args.merge=${codename1.css.compiler.args.merge}</argument>
+                              <argument>${codename1.exec.args.debug}</argument>
+                              <argument>${codename1.exec.args.runjdwp.transport}</argument>
+                              <argument>-classpath</argument>
+                              <classpath />
+                              <argument>${exec.mainClass}</argument>
+                              <argument>${codename1.mainClass}</argument>
+                          </arguments>
+                      </configuration>
+                      <executions>
+                          <execution>
+                              <id>run-in-simulator</id>
+                              <phase>verify</phase>
+                              <goals>
+                                  <goal>exec</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
       <profile>
           <!-- Profile used for running the simulator.  This uses exec:exec to fork a Java process.
             NOTE: IntelliJ does not use this profile for running the simulator.  It, instead uses
