@@ -6,12 +6,11 @@ setlocal EnableExtensions
 set MVNW=mvnw.cmd
 
 SET CMD=%1
-if !CMD! EQU  (
+if "%CMD%"=="" (
   set CMD=simulator
 )
-!CMD!
+goto %CMD%
 
-goto :EOF
 :simulator
 !MVNW! verify -Psimulator -DskipTests -Dcodename1.platform^=javase
 
@@ -29,7 +28,7 @@ goto :EOF
 
 goto :EOF
 :help
-echo run.sh [COMMAND]
+echo run.bat [COMMAND]
 echo Commands:
 echo   simulator
 echo     Runs app using Codename One Simulator

@@ -7,10 +7,10 @@ setlocal EnableExtensions
 set MVNW=mvnw.cmd
 
 SET CMD=%1
-if !CMD! EQU  (
+if "%CMD%"=="" (
   set CMD=jar
 )
-!CMD!
+goto %CMD%
 
 goto :EOF
 :mac_desktop
