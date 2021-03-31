@@ -1,7 +1,8 @@
 var environments = {
     cli : 'Command-line',
     intellij : 'IntelliJ',
-    netbeans : 'NetBeans'
+    netbeans : 'NetBeans',
+    eclipse: 'Eclipse'
 };
 
 function installTabbedSections() {

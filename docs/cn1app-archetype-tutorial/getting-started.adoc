@@ -162,6 +162,45 @@ After the project is open, you can run the app by pressing the green "run" icon 
 image:images/netbeans-run-icon.png[]
 ).
 
+[#run-in-eclipse]
+[discrete]
+=== Running the Project in Eclipse
+++++
+<env eclipse></env>
+++++
+
+First, we must import the project into Eclipse using _File_ > _Import..._
+
+image::images/eclipse-file-import-menu.png[]
+
+In the _Import_ dialog, select _Maven_ > _Existing Maven Projects_
+
+image::images/eclipse-import-dialog.png[]
+
+And press _Next_.
+
+In this panel, select (check the boxes beside) all of the projects, and press _Finish_
+
+image::images/eclipse-import-maven-projects-dialog.png[]
+
+NOTE: This may present a dialog saying that there were errors.  Ignore these for now as it is just a case of Eclipse not understanding the relationships between all the modules yet.
+
+When the project opens, show the Package explorer, and you shoudl see a set of projects like the following:
+
+image::images/eclipse-package-explorer.png[]
+
+Select the first package in the list (in the screenshot it says "eclipsetest1", but for your project it will be the name that you chose for your project).
+
+Then click the _down_ arrow beside the _Run_ button on the toolbar.  (
+image:images/eclipse-run-button.png[]
+)
+
+This should expand to show a menu of all of the build options you have, as shown below:
+
+image::images/eclipse-run-configuration-menu.png[]
+
+Select the "Run Simulator" option.
+
 [discrete]
 [#first-run-in-simulator]
 === The First Run in the Simulator
@@ -283,6 +322,19 @@ image::images/netbeans-root-and-common-project-inspector.png[]
 
 IMPORTANT: All of the Codename One build options are defined ONLY on the root module.  If you are editing a file inside the common module, you will need to select the root project in the project inspector to perform a build, or to run the project.  This is an annoyance that we are working on improving with the NetBeans integration.
 
+===== Eclipse
+++++
+<env eclipse></env>
+++++
+
+When you open the project in Eclipse, the package explorer will look something like this:
+
+image::images/eclipse-package-explorer.png[]
+
+
+IMPORTANT: All run and build options should be run with the _root_ project seleted in the package explorer.  If you try to build or run the project with one of the sub-modules (e.g. _xxx-common_, or _xxx-javase_ selected, then the build/run will fail with an error).
+
+
 ==== File Descriptions
 
 Wondering what all of these files are?  Here is a brief overview:
@@ -295,6 +347,9 @@ A thin CLI wrapper script for running the project inside the Codename one simula
 
 nbactions.xml, nbactions-*.xml, nb-configuration.xml::
 Configuration files for NetBeans that add some convenient menu options for running and building the project.
+
+*.launch::
+Configuration files used by Eclipse.
 
 *.adoc::
 README files and some documentation to help you get started.
@@ -519,6 +574,20 @@ Then press the "build" image:images/netbeans-build-icon.png[] button.
 
 If all goes well, you will find the resulting executable jar in the `javase/target` directory.
 
+[discrete]
+==== Eclipse
+++++
+<env eclipse></env>
+++++
+
+Click on the image:images/eclipse-run-button.png[run] button on the toolbar, and select "Build JavaSE Desktop App" from the options as shown below:
+
+image::images/eclipse-build-javase-desktop-app.png[]
+
+IMPORTANT: Make sure the _root_ module is selected in the package explorer, and not one of the sub-modules, or the build will fail.
+
+If all goes well, you will find the resulting executable jar in the `javase/target` directory.
+
 [#ios]
 === Building for iOS
 
@@ -608,6 +677,22 @@ If all goes well, the project will be found in the `ios/target` directory.
 
 You can proceed to open the Xcode project (the .xcworkspace file) in Xcode, and build the project.
 
+[#ios-local-builds-eclipse]
+====== Eclipse
+++++
+<env eclipse></env>
+++++
+
+Press on the image:images/eclipse-run-button.png[run] menu on the toolbar and select "Build iOS Xcode Project" as shown below:
+
+image::images/eclipse-build-ios-xcode-project.png[]
+
+IMPORTANT: Make sure the _root_ module is selected in the package explorer, and not one of the sub-modules, or the build will fail.
+
+If all goes well, the project will be found in the `ios/target` directory.
+
+You can proceed to open the Xcode project (the .xcworkspace file) in Xcode, and build the project.
+
 [#ios-server-builds]
 ==== Using the Codename One Build Server
 
@@ -676,6 +761,18 @@ image::images/netbeans-select-ios-app-debug-config.png[]
 
 Then press the "Run" image:images/netbeans-run-icon.png[] button.
 
+===== Eclipse
+++++
+<env eclipse></env>
+++++
+
+
+Click on the image:images/eclipse-run-button.png[] menu on the tool bar and select "Send iOS Debug Build" as shown below:
+
+image::images/eclipse-send-ios-debug-build.png[]
+
+IMPORTANT: Make sure the _root_ module is selected in the package explorer, and not one of the sub-modules, or the build will fail.
+
 ===== Downloading Result from the Build Server
 
 After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
@@ -734,6 +831,16 @@ image::images/netbeans-select-ios-app-config.png[]
 
 The press the "Run" image:images/netbeans-run-icon.png[] button.
 
+====== Eclipse
+++++
+<env eclipse></env>
+++++
+
+Click on the image:images/eclipse-run-button.png[] menu on the toolbar and select "Send iOS Release Build" as shown below:
+
+image::images/eclipse-send-ios-release-build.png[]
+
+IMPORTANT: Make sure the _root_ module is selected in the package explorer, and not one of the sub-modules, or the build will fail.
 
 ===== Downloading Result from the Build Server
 
@@ -819,6 +926,22 @@ If all goes well, the project will be found in the `android/target` directory.
 
 You can proceed to open and build the project in Android Studio.
 
+[#android-local-builds-eclipse]
+====== Eclipse
+++++
+<env eclipse></env>
+++++
+
+Press on the image:images/eclipse-run-button.png[] menu on the toolbar and select "Build Android Studio Project" as shown below:
+
+image::images/eclipse-build-android-studio-project.png[]
+
+IMPORTANT: Make sure that the _root_ module is selected in the package explorer when you select this option, and not one of the sub-modules, or the build will fail with an error.
+
+If all goes well, the project will be found in the `android/target` directory.
+
+You can proceed to open and build the project in Android Studio.
+
 [#android-server-builds]
 ==== Using the Codename One Build Server
 
@@ -874,6 +997,17 @@ Click on the configuration menu on the tool bar and select "Android App" as show
 image::images/netbeans-select-android-config.png[]
 
 Then press the "run" image:images/netbeans-run-icon.png[] button.
+
+===== Eclipse
+++++
+<env eclipse></env>
+++++
+
+Click on the image:images/eclipse-run-button.png[] button on the toolbar and select "Send Android Build" as shown below:
+
+image::images/eclipse-send-android-build.png[]
+
+IMPORTANT: Make sure that the _root_ module is selected in the package explorer when you select this option, and not one of the sub-modules, or the build will fail with an error.
 
 ===== Downloading Result from the Build Server
 
@@ -939,6 +1073,19 @@ Then press the "run" image:images/netbeans-run-icon.png[] button.
 
 After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
 
+[discrete]
+==== Eclipse
+++++
+<env eclipse></env>
+++++
+
+Click on the image:images/eclipse-run-button.png[run] button on the tool bar and select "Send Mac Desktop Build" as shown below:
+
+image::images/eclipse-send-mac-desktop-build.png[]
+
+IMPORTANT: All run and build options should be run with the _root_ project seleted in the package explorer.  If you try to build or run the project with one of the sub-modules (e.g. _xxx-common_, or _xxx-javase_ selected, then the build/run will fail with an error).
+
+After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
 
 
 [#windows-desktop]
@@ -999,6 +1146,18 @@ Click on the configuration menu on the tool bar and select "Windows Desktop App"
 image::images/netbeans-select-windows-config.png[]
 
 Then press the "run" image:images/netbeans-run-icon.png[] button.
+
+After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
+
+[discrete]
+==== Eclipse
+++++
+<env eclipse></env>
+++++
+
+Click on the image:images/eclipse-run-button.png[run] button on the toolbar and select "Send Windows Desktop Build" as shown below:
+
+image::images/eclipse-send-windows-desktop-build.png[]
 
 After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
 
@@ -1067,6 +1226,17 @@ Click on the configuration menu on the tool bar and select "Windows UWP App" as 
 image::images/netbeans-select-windows-uwp-config.png[]
 
 Then press the "run" image:images/netbeans-run-icon.png[] button.
+
+After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
+
+===== Eclipse
+++++
+<env eclipse></env>
+++++
+
+Click on the image:images/eclipse-run-button.png[run] button on the toolbar and select "Send Windows UWP Build" as shown below:
+
+image::images/eclipse-send-windows-uwp-build.png[]
 
 After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
 
@@ -1141,6 +1311,19 @@ Then press the "run" image:images/netbeans-run-icon.png[] button.
 
 After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
 
+===== Eclipse
+++++
+<env eclipse></env>
+++++
+
+Click on the image:images/eclipse-run-button.png[run] button on the tool bar and select "Send Javascript Build" as shown below:
+
+image::images/eclipse-send-javascript-build.png[]
+
+
+After you submit the build, you can follow the progress on the Codename One build server.  See <<build-app>>.
+
+
 ==== Advanced Javascript Options
 
 For more information about Javascript builds see https://www.codenameone.com/developer-guide.html#_working_with_javascript[Working with Javascript] in the Developer guide.
@@ -1183,6 +1366,15 @@ image::images/intellij-open-settings.png[]
 Right-click on the project in the project inspector, and select "Maven" > "Open Control Center" as shown below:
 
 image::images/netbeans-open-control-center.png[]
+
+==== Opening Codename One Settings from Eclipse
+++++
+<env eclipse ></env>
+++++
+
+Press the image:images/eclipse-run-button.png[run] button and select "Open Codename One Settings" as shown below:
+
+image::images/eclipse-open-codenameone-settings.png[]
 
 [#dashboard]
 === The Dashboard

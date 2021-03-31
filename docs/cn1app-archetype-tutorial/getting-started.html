@@ -771,6 +771,74 @@ run.bat</code></pre>
 <span class="image"><img src="images/netbeans-run-icon.png" alt="netbeans run icon"></span>
 ).</p>
 </div>
+<h3 id="run-in-eclipse" class="discrete">Running the Project in Eclipse</h3>
+<env eclipse></env>
+<div class="paragraph">
+<p>First, we must import the project into Eclipse using <em>File</em> &gt; <em>Import&#8230;&#8203;</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-file-import-menu.png" alt="eclipse file import menu">
+</div>
+</div>
+<div class="paragraph">
+<p>In the <em>Import</em> dialog, select <em>Maven</em> &gt; <em>Existing Maven Projects</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-import-dialog.png" alt="eclipse import dialog">
+</div>
+</div>
+<div class="paragraph">
+<p>And press <em>Next</em>.</p>
+</div>
+<div class="paragraph">
+<p>In this panel, select (check the boxes beside) all of the projects, and press <em>Finish</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-import-maven-projects-dialog.png" alt="eclipse import maven projects dialog">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This may present a dialog saying that there were errors.  Ignore these for now as it is just a case of Eclipse not understanding the relationships between all the modules yet.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When the project opens, show the Package explorer, and you shoudl see a set of projects like the following:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-package-explorer.png" alt="eclipse package explorer">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the first package in the list (in the screenshot it says "eclipsetest1", but for your project it will be the name that you chose for your project).</p>
+</div>
+<div class="paragraph">
+<p>Then click the <em>down</em> arrow beside the <em>Run</em> button on the toolbar.  (
+<span class="image"><img src="images/eclipse-run-button.png" alt="eclipse run button"></span>
+)</p>
+</div>
+<div class="paragraph">
+<p>This should expand to show a menu of all of the build options you have, as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-run-configuration-menu.png" alt="eclipse run configuration menu">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the "Run Simulator" option.</p>
+</div>
 <h3 id="first-run-in-simulator" class="discrete">The First Run in the Simulator</h3>
 <div class="paragraph">
 <p>If you run this project in the Codename One Simulator without making any modifications to the app, it will look something like the following.</p>
@@ -954,6 +1022,30 @@ All of the Codename One build options are defined ONLY on the root module.  If y
 </table>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_eclipse">Eclipse</h5>
+<env eclipse></env>
+<div class="paragraph">
+<p>When you open the project in Eclipse, the package explorer will look something like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-package-explorer.png" alt="eclipse package explorer">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+All run and build options should be run with the <em>root</em> project seleted in the package explorer.  If you try to build or run the project with one of the sub-modules (e.g. <em>xxx-common</em>, or <em>xxx-javase</em> selected, then the build/run will fail with an error).
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_file_descriptions">File Descriptions</h4>
@@ -973,6 +1065,10 @@ All of the Codename One build options are defined ONLY on the root module.  If y
 <dt class="hdlist1">nbactions.xml, nbactions-*.xml, nb-configuration.xml</dt>
 <dd>
 <p>Configuration files for NetBeans that add some convenient menu options for running and building the project.</p>
+</dd>
+<dt class="hdlist1">*.launch</dt>
+<dd>
+<p>Configuration files used by Eclipse.</p>
 </dd>
 <dt class="hdlist1">*.adoc</dt>
 <dd>
@@ -1317,6 +1413,31 @@ JavaSE desktop builds are built locally, and do not require any special developm
 <div class="paragraph">
 <p>If all goes well, you will find the resulting executable jar in the <code>javase/target</code> directory.</p>
 </div>
+<h4 id="_eclipse_2" class="discrete">Eclipse</h4>
+<env eclipse></env>
+<div class="paragraph">
+<p>Click on the <span class="image"><img src="images/eclipse-run-button.png" alt="run"></span> button on the toolbar, and select "Build JavaSE Desktop App" from the options as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-build-javase-desktop-app.png" alt="eclipse build javase desktop app">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Make sure the <em>root</em> module is selected in the package explorer, and not one of the sub-modules, or the build will fail.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If all goes well, you will find the resulting executable jar in the <code>javase/target</code> directory.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="ios">Building for iOS</h3>
@@ -1446,6 +1567,36 @@ If you use one of the <a href="#ios-server-builds">Codename One build server tar
 <p>You can proceed to open the Xcode project (the .xcworkspace file) in Xcode, and build the project.</p>
 </div>
 </div>
+<div class="sect5">
+<h6 id="ios-local-builds-eclipse">Eclipse</h6>
+<env eclipse></env>
+<div class="paragraph">
+<p>Press on the <span class="image"><img src="images/eclipse-run-button.png" alt="run"></span> menu on the toolbar and select "Build iOS Xcode Project" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-build-ios-xcode-project.png" alt="eclipse build ios xcode project">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Make sure the <em>root</em> module is selected in the package explorer, and not one of the sub-modules, or the build will fail.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If all goes well, the project will be found in the <code>ios/target</code> directory.</p>
+</div>
+<div class="paragraph">
+<p>You can proceed to open the Xcode project (the .xcworkspace file) in Xcode, and build the project.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1540,6 +1691,30 @@ If you use one of the <a href="#ios-server-builds">Codename One build server tar
 </div>
 </div>
 <div class="sect4">
+<h5 id="_eclipse_3">Eclipse</h5>
+<env eclipse></env>
+<div class="paragraph">
+<p>Click on the <span class="image"><img src="images/eclipse-run-button.png" alt="eclipse run button"></span> menu on the tool bar and select "Send iOS Debug Build" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-send-ios-debug-build.png" alt="eclipse send ios debug build">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Make sure the <em>root</em> module is selected in the package explorer, and not one of the sub-modules, or the build will fail.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
 <h5 id="_downloading_result_from_the_build_server">Downloading Result from the Build Server</h5>
 <div class="paragraph">
 <p>After you submit the build, you can follow the progress on the Codename One build server.  See <a href="#build-app">Using the Codename One Build App</a>.</p>
@@ -1613,6 +1788,30 @@ If you use one of the <a href="#ios-server-builds">Codename One build server tar
 </div>
 <div class="paragraph">
 <p>The press the "Run" <span class="image"><img src="images/netbeans-run-icon.png" alt="netbeans run icon"></span> button.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_eclipse_4">Eclipse</h6>
+<env eclipse></env>
+<div class="paragraph">
+<p>Click on the <span class="image"><img src="images/eclipse-run-button.png" alt="eclipse run button"></span> menu on the toolbar and select "Send iOS Release Build" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-send-ios-release-build.png" alt="eclipse send ios release build">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Make sure the <em>root</em> module is selected in the package explorer, and not one of the sub-modules, or the build will fail.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1738,6 +1937,36 @@ If you use the "Android App" build target, which uses the Codename One build ser
 <p>You can proceed to open and build the project in Android Studio.</p>
 </div>
 </div>
+<div class="sect5">
+<h6 id="android-local-builds-eclipse">Eclipse</h6>
+<env eclipse></env>
+<div class="paragraph">
+<p>Press on the <span class="image"><img src="images/eclipse-run-button.png" alt="eclipse run button"></span> menu on the toolbar and select "Build Android Studio Project" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-build-android-studio-project.png" alt="eclipse build android studio project">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Make sure that the <em>root</em> module is selected in the package explorer when you select this option, and not one of the sub-modules, or the build will fail with an error.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If all goes well, the project will be found in the <code>android/target</code> directory.</p>
+</div>
+<div class="paragraph">
+<p>You can proceed to open and build the project in Android Studio.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1811,6 +2040,30 @@ If you use the "Android App" build target, which uses the Codename One build ser
 </div>
 <div class="paragraph">
 <p>Then press the "run" <span class="image"><img src="images/netbeans-run-icon.png" alt="netbeans run icon"></span> button.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_eclipse_5">Eclipse</h5>
+<env eclipse></env>
+<div class="paragraph">
+<p>Click on the <span class="image"><img src="images/eclipse-run-button.png" alt="eclipse run button"></span> button on the toolbar and select "Send Android Build" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-send-android-build.png" alt="eclipse send android build">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Make sure that the <em>root</em> module is selected in the package explorer when you select this option, and not one of the sub-modules, or the build will fail with an error.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect4">
@@ -1911,6 +2164,31 @@ This tutorial only shows you how to trigger a Mac desktop build.  More details a
 <div class="paragraph">
 <p>After you submit the build, you can follow the progress on the Codename One build server.  See <a href="#build-app">Using the Codename One Build App</a>.</p>
 </div>
+<h4 id="_eclipse_6" class="discrete">Eclipse</h4>
+<env eclipse></env>
+<div class="paragraph">
+<p>Click on the <span class="image"><img src="images/eclipse-run-button.png" alt="run"></span> button on the tool bar and select "Send Mac Desktop Build" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-send-mac-desktop-build.png" alt="eclipse send mac desktop build">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+All run and build options should be run with the <em>root</em> project seleted in the package explorer.  If you try to build or run the project with one of the sub-modules (e.g. <em>xxx-common</em>, or <em>xxx-javase</em> selected, then the build/run will fail with an error).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After you submit the build, you can follow the progress on the Codename One build server.  See <a href="#build-app">Using the Codename One Build App</a>.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="windows-desktop">Windows Desktop Builds</h3>
@@ -1989,6 +2267,19 @@ The Windows Desktop build target uses the Codename One build server, and require
 </div>
 <div class="paragraph">
 <p>Then press the "run" <span class="image"><img src="images/netbeans-run-icon.png" alt="netbeans run icon"></span> button.</p>
+</div>
+<div class="paragraph">
+<p>After you submit the build, you can follow the progress on the Codename One build server.  See <a href="#build-app">Using the Codename One Build App</a>.</p>
+</div>
+<h4 id="_eclipse_7" class="discrete">Eclipse</h4>
+<env eclipse></env>
+<div class="paragraph">
+<p>Click on the <span class="image"><img src="images/eclipse-run-button.png" alt="run"></span> button on the toolbar and select "Send Windows Desktop Build" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-send-windows-desktop-build.png" alt="eclipse send windows desktop build">
+</div>
 </div>
 <div class="paragraph">
 <p>After you submit the build, you can follow the progress on the Codename One build server.  See <a href="#build-app">Using the Codename One Build App</a>.</p>
@@ -2102,6 +2393,21 @@ Before you can submit a UWP build you need to create a certificate, and <strong>
 <p>After you submit the build, you can follow the progress on the Codename One build server.  See <a href="#build-app">Using the Codename One Build App</a>.</p>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_eclipse_8">Eclipse</h5>
+<env eclipse></env>
+<div class="paragraph">
+<p>Click on the <span class="image"><img src="images/eclipse-run-button.png" alt="run"></span> button on the toolbar and select "Send Windows UWP Build" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-send-windows-uwp-build.png" alt="eclipse send windows uwp build">
+</div>
+</div>
+<div class="paragraph">
+<p>After you submit the build, you can follow the progress on the Codename One build server.  See <a href="#build-app">Using the Codename One Build App</a>.</p>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_advanced_uwp_options">Advanced UWP Options</h4>
@@ -2206,6 +2512,21 @@ Javascript builds are available to Codename One Enterprise subscribers.  See <a 
 <p>After you submit the build, you can follow the progress on the Codename One build server.  See <a href="#build-app">Using the Codename One Build App</a>.</p>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_eclipse_9">Eclipse</h5>
+<env eclipse></env>
+<div class="paragraph">
+<p>Click on the <span class="image"><img src="images/eclipse-run-button.png" alt="run"></span> button on the tool bar and select "Send Javascript Build" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-send-javascript-build.png" alt="eclipse send javascript build">
+</div>
+</div>
+<div class="paragraph">
+<p>After you submit the build, you can follow the progress on the Codename One build server.  See <a href="#build-app">Using the Codename One Build App</a>.</p>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_advanced_javascript_options">Advanced Javascript Options</h4>
@@ -2257,6 +2578,18 @@ Javascript builds are available to Codename One Enterprise subscribers.  See <a 
 <div class="imageblock">
 <div class="content">
 <img src="images/netbeans-open-control-center.png" alt="netbeans open control center">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_opening_codename_one_settings_from_eclipse">Opening Codename One Settings from Eclipse</h4>
+<env eclipse ></env>
+<div class="paragraph">
+<p>Press the <span class="image"><img src="images/eclipse-run-button.png" alt="run"></span> button and select "Open Codename One Settings" as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-open-codenameone-settings.png" alt="eclipse open codenameone settings">
 </div>
 </div>
 </div>
@@ -2517,7 +2850,7 @@ The Codename One source is open source.  Released under GPLv2 with Classpath Exc
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-18 10:49:32 -0700
+Last updated 2021-03-31 08:44:11 -0700
 </div>
 </div>
 </body>

@@ -1,19 +1,13 @@
 body div.env {
     display:none;
-    /*
-    border: 1px solid #eaeaea;
-    margin-left: -10px;
-    margin-right: -10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    */
     clear:right;
 
 }
 
 body.env-cli div.env-cli,
 body.env-intellij div.env-intellij,
-body.env-netbeans div.env-netbeans {
+body.env-netbeans div.env-netbeans,
+body.env-eclipse div.env-eclipse{
     display:block;
 }
 
@@ -26,7 +20,8 @@ button.env-button {
 
 body.env-cli button.env-button[for='cli'],
 body.env-intellij button.env-button[for='intellij'],
-body.env-netbeans button.env-button[for='netbeans']{
+body.env-netbeans button.env-button[for='netbeans'],
+body.env-eclipse button.env-button[for='eclipse']{
     background-color: #ccc;
     color:black
 }
