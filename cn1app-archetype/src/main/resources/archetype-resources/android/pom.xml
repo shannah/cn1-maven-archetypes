@@ -21,8 +21,9 @@
       <codename1.defaultBuildTarget>android-device</codename1.defaultBuildTarget>
   </properties>
     <build>
+        <sourceDirectory>src/main/empty</sourceDirectory>
         <resources>
-            <sourceDirectory>src/main/empty</sourceDirectory>
+
             <resource>
                 <directory>src/main/java</directory>
             </resource>
