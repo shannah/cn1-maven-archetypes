@@ -48,8 +48,15 @@
         <include>*.adoc</include>
         <include>mvnw</include>
         <include>mvnw.cmd</include>
+
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
         <include>*.launch</include>
       </includes>
+
     </fileSet>
   </fileSets>
   <modules>

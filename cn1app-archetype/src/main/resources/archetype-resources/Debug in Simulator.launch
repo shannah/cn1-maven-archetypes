@@ -1,3 +1,4 @@
+#set ( $d = "$")
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.debug.core.groups.GroupLaunchConfigurationType">
     <stringAttribute key="org.eclipse.debug.core.launchGroup.0.action" value="OUTPUT_REGEXP"/>
