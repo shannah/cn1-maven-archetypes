@@ -12,19 +12,19 @@ if "%CMD%"=="" (
 goto %CMD%
 
 :simulator
-!MVNW! verify -Psimulator -DskipTests -Dcodename1.platform^=javase
+!MVNW! verify -Psimulator -DskipTests -Dcodename1.platform^=javase -e
 
 goto :EOF
 :desktop
-!MVNW! verify -Prun-desktop -DskipTests -Dcodename1.platform^=javase
+!MVNW! verify -Prun-desktop -DskipTests -Dcodename1.platform^=javase -e
 
 goto :EOF
 :settings
-!MVNW! cn:settings
+!MVNW! cn:settings -e
 
 goto :EOF
 :update
-!MVNW! cn:update
+!MVNW! cn:update -U -e
 
 goto :EOF
 :help

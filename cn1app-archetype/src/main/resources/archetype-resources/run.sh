@@ -3,19 +3,19 @@ MVNW="./mvnw"
 
 function simulator {
   
-  "$MVNW" "verify" "-Psimulator" "-DskipTests" "-Dcodename1.platform=javase"
+  "$MVNW" "verify" "-Psimulator" "-DskipTests" "-Dcodename1.platform=javase" "-e"
 }
 function desktop {
   
-  "$MVNW" "verify" "-Prun-desktop" "-DskipTests" "-Dcodename1.platform=javase"
+  "$MVNW" "verify" "-Prun-desktop" "-DskipTests" "-Dcodename1.platform=javase" "-e"
 }
 function settings {
   
-  "$MVNW" "cn:settings"
+  "$MVNW" "cn:settings" "-e"
 }
 function update {
   
-  "$MVNW" "cn:update"
+  "$MVNW" "cn:update" "-U" "-e"
 }
 function help {
   "echo" "-e" "run.sh [COMMAND]"
