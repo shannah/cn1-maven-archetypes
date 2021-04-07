@@ -20,20 +20,30 @@
         </license>
     </licenses>
 
-    
+    <!-- UNCOMMENT AND COMPLETE THIS SECTION IF PUBLISHING TO MAVEN CENTRAL -->
     <!--
-  <distributionManagement>
-      <snapshotRepository>
-        <id>sonatype-nexus-snapshots</id>
-        <name>Sonatype Nexus Snapshots</name>
-        <url>${sonatypeOssDistMgmtSnapshotsUrl}</url>
-      </snapshotRepository>
-      <repository>
-        <id>sonatype-nexus-staging</id>
-        <name>Nexus Release Repository</name>
-        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-      </repository>
-    </distributionManagement>-->
+    <developers>
+        <developer>
+            <id>exampleId</id>
+            <name>FirstName LastName</name>
+            <email>yourname@example.com</email>
+            <timezone>-8</timezone>
+        </developer>
+
+    </developers>
+
+    -->
+    <!-- UNCOMMENT AND COMPLETE THIS SECTION IF PUBLISHING TO MAVEN CENTRAL
+        ME => Your Github Username
+        MYREPO => Your github repository name.
+    -->
+    <!--
+    <scm>
+        <url>https://github.com/ME/MYREPO</url>
+        <connection>scm:git:git@github.com:ME/MYREPO.git</connection>
+    </scm>
+    -->
+
 	  
     <properties>
         <cn1.plugin.version>${cn1Version}</cn1.plugin.version>
@@ -136,16 +146,120 @@
                     </plugin>
         </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <executions>
+                    <execution>
+                        <id>build-javadoc</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <phase>post-integration-test</phase>
+                        <configuration>
+                            <quiet>true</quiet>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <source>1.8</source>
+                    <show>protected</show>
+                    <failOnError>false</failOnError>
+                    <!-- UNCOMMENT and modify to use Asciidoc for Javadocs
+                    <doclet>org.asciidoctor.Asciidoclet</doclet>
+                    <docletArtifact>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoclet</artifactId>
+                        <version>1.5.6</version>
+                    </docletArtifact>
+                    <overview>../common/src/main/resources/overview.adoc</overview>
+                    <additionalparam>
+                        --base-dir ${project.basedir}
+                        --attribute "name=${project.name}"
+                        --attribute "version=${project.version}"
+                        --attribute "title-link=https://github.com/shannah/CodeRAD[${project.name} ${project.version}]"
+                    </additionalparam>
+                    <offlineLinks>
+                        <offlineLink>
+                            <url>https://www.codenameone.com/javadoc/</url>
+                            <location>${basedir}/../javadoc-dependencies/com.codename1</location>
+                        </offlineLink>
+                    </offlineLinks>
+                    -->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
-    
-			
-    <repositories>
 
-    </repositories>
-    <pluginRepositories>
 
-    </pluginRepositories>
-    
-        
+    <!-- The sign-artifacts profile is used for signing artifacts when you deploy to Maven
+        central.  In order for this to work, you also need to add the following to your
+        settings.xml file:
 
+        <profiles>
+            <profile>
+              <id>sign-artifacts</id>
+              <activation><activeByDefault>true</activeByDefault></activation>
+              <properties>
+                  <gpg.passphrase>YOUR_PASSPHRASE</gpg.passphrase>
+              </properties>
+            </profile>
+        </profiles>
+        <servers>
+            <server>
+              <id>nexus-staging</id>
+              <username>YOUR_USERNAME</username>
+              <password>YOUR_PASSWORD</password>
+            </server>
+        </servers>
+    -->
+
+    <profiles>
+        <profile>
+            <id>sign-artifacts</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.4</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <passphrase>${gpg.passphrase}</passphrase>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    <distributionManagement>
+        <repository>
+            <id>nexus-staging</id>
+            <name>Nexus Release Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 </project>
