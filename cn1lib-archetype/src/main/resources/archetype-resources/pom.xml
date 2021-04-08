@@ -177,10 +177,10 @@
                     </docletArtifact>
                     <overview>../common/src/main/resources/overview.adoc</overview>
                     <additionalparam>
-                        --base-dir ${project.basedir}
-                        --attribute "name=${project.name}"
-                        --attribute "version=${project.version}"
-                        --attribute "title-link=https://github.com/shannah/CodeRAD[${project.name} ${project.version}]"
+                        -\-base-dir ${project.basedir}
+                        -\-attribute "name=${project.name}"
+                        -\-attribute "version=${project.version}"
+                        -\-attribute "title-link=https://github.com/shannah/CodeRAD[${project.name} ${project.version}]"
                     </additionalparam>
                     <offlineLinks>
                         <offlineLink>
