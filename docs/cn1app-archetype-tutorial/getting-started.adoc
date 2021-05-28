@@ -156,6 +156,8 @@ See <<first-run-in-simulator>> for the expected result.
 <env netbeans ></env>
 ++++
 
+IMPORTANT: Before opening the project in NetBeans, you need to copy the contents of the _tools/netbeans_ directory into the root project directory. These files are required by NetBeans to build, run, and debug the project correctly.
+
 NetBeans supports Maven projects natively.  You can open the project directly in NetBeans using it's `File` > `Open Project...` option.
 
 After the project is open, you can run the app by pressing the green "run" icon (
@@ -185,7 +187,23 @@ image::images/eclipse-import-maven-projects-dialog.png[]
 
 NOTE: This may present a dialog saying that there were errors.  Ignore these for now as it is just a case of Eclipse not understanding the relationships between all the modules yet.
 
-When the project opens, show the Package explorer, and you shoudl see a set of projects like the following:
+Next we need to import the Eclipse launch configurations located inside the _tools/eclipse_ directory.
+
+Select _File_ > _Import..._ again, but this time, in the _Import_ dialog, select _Run/Debug_ > _Launch Configurations_ and click _Next_.
+
+image::images/eclipse-import-launch-configurations-dialog.png[]
+
+In the next panel, press _Browse..._ then select the _tools/eclipse_ directory.
+
+image::images/eclipse-launch-configurations-file-dialog.png[]
+
+Then check the _eclipse_ option, and press _Finish_
+
+image::images/eclipse-import-launch-configurations-finish.png[]
+
+
+
+When the project opens, show the Package explorer, and you should see a set of projects like the following:
 
 image::images/eclipse-package-explorer.png[]
 

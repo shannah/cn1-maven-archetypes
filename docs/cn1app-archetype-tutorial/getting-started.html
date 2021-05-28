@@ -763,6 +763,18 @@ run.bat</code></pre>
 </div>
 <h3 id="run-in-netbeans" class="discrete">Running the Project in NetBeans</h3>
 <env netbeans ></env>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Before opening the project in NetBeans, you need to copy the contents of the <em>tools/netbeans</em> directory into the root project directory. These files are required by NetBeans to build, run, and debug the project correctly.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>NetBeans supports Maven projects natively.  You can open the project directly in NetBeans using it&#8217;s <code>File</code> &gt; <code>Open Project&#8230;&#8203;</code> option.</p>
 </div>
@@ -813,7 +825,34 @@ This may present a dialog saying that there were errors.  Ignore these for now a
 </table>
 </div>
 <div class="paragraph">
-<p>When the project opens, show the Package explorer, and you shoudl see a set of projects like the following:</p>
+<p>Next we need to import the Eclipse launch configurations located inside the <em>tools/eclipse</em> directory.</p>
+</div>
+<div class="paragraph">
+<p>Select <em>File</em> &gt; <em>Import&#8230;&#8203;</em> again, but this time, in the <em>Import</em> dialog, select <em>Run/Debug</em> &gt; <em>Launch Configurations</em> and click <em>Next</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-import-launch-configurations-dialog.png" alt="eclipse import launch configurations dialog">
+</div>
+</div>
+<div class="paragraph">
+<p>In the next panel, press <em>Browse&#8230;&#8203;</em> then select the <em>tools/eclipse</em> directory.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-launch-configurations-file-dialog.png" alt="eclipse launch configurations file dialog">
+</div>
+</div>
+<div class="paragraph">
+<p>Then check the <em>eclipse</em> option, and press <em>Finish</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse-import-launch-configurations-finish.png" alt="eclipse import launch configurations finish">
+</div>
+</div>
+<div class="paragraph">
+<p>When the project opens, show the Package explorer, and you should see a set of projects like the following:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2850,7 +2889,7 @@ The Codename One source is open source.  Released under GPLv2 with Classpath Exc
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-31 08:44:11 -0700
+Last updated 2021-05-28 08:01:04 -0700
 </div>
 </div>
 </body>
