@@ -38,11 +38,18 @@
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
-      <directory></directory>
+      <directory>tools/netbeans</directory>
       <includes>
         <include>nb-configuration.xml</include>
         <include>nbactions.xml</include>
         <include>nbactions-*.xml</include>
+
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>.gitignore</include>
         <include>*.sh</include>
         <include>*.bat</include>
         <include>*.adoc</include>
@@ -52,7 +59,7 @@
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
-      <directory></directory>
+      <directory>tools/eclipse</directory>
       <includes>
         <include>*.launch</include>
       </includes>
