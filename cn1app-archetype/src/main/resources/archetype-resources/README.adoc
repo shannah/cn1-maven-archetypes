@@ -19,7 +19,7 @@ IMPORTANT: If you use Eclipse as your IDE, **read this first**
 
 The _tools/eclipse_ directory contains eclipse ".launch" files that will add common Maven goals as menu items inside Eclipse.
 
-**You should copy these files into the project root directory before importing the project into Eclipse**
+**After importing this project into Eclipse, you should import the launch files.**
 
 == NetBeans Users
 
