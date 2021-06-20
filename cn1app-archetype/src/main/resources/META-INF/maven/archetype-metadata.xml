@@ -100,7 +100,6 @@
           <directory></directory>
           <includes>
             <include>codenameone_settings.properties</include>
-            <include>nbactions.xml</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
