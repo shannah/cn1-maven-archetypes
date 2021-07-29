@@ -22,7 +22,7 @@ Maven::
 As mentioned above, this is a Maven starter project.  This means that it uses maven to manage all dependencies and for building the project.
 
 IDE Integration::
-The project includes IntelliJ and NetBeans configuration to expose the important goals as convenient menus.  For tighter integration, you can also install the Codename One plugin in your IDE.  See https://www.codenameone.com/getting-started.html[Getting Started with Codename One] for instructions.
+The project includes IntelliJ and NetBeans configuration to expose the important goals as convenient menus. See https://www.codenameone.com/getting-started.html[Getting Started with Codename One] for instructions.
 
 **Scope of this Tutorial**
 
