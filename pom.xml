@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.codenameone</groupId>
     <artifactId>maven-archetypes</artifactId>
-    <version>7.0.35</version>
+    <version>8.0-SNAPSHOTS</version>
     <packaging>pom</packaging>
 
 
