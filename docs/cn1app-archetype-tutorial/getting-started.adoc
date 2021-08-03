@@ -436,7 +436,6 @@ Called when your app is placed in the background, and when your app exits.
 `destroy()`::
 Called when your app exits.
 ====
-For the purpose of this tutorial, we'll leave the `init()` and `destroy()` methods untouched, and we'll focus on the `start()` and `stop()` methods.
 
 The `runApp()` method currently looks like:
 

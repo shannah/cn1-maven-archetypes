@@ -25,7 +25,7 @@
     </modules>
 	  
     <properties>
-        <cn1.plugin.version>${cn1Version}</cn1.plugin.version>
+        <cn1.plugin.version>${cn1PluginVersion}</cn1.plugin.version>
         <cn1.version>${cn1Version}</cn1.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	      
