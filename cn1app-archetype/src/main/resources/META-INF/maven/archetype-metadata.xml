@@ -5,7 +5,7 @@
 
   <requiredProperties>
     <requiredProperty key="cn1Version">
-      <defaultValue>LATEST</defaultValue>
+      <defaultValue>8.0-SNAPSHOT</defaultValue>
     </requiredProperty>
     <requiredProperty key="cn1PluginVersion">
       <defaultValue>8.0-SNAPSHOT</defaultValue>
