@@ -22,6 +22,16 @@ runSh.setExecutable(true, false)
 def buildSh = new java.io.File(rootDir, "build.sh")
 buildSh.setExecutable(true, false)
 
+if (request.getProperties().getProperty("ide", null) == "netbeans") {
+    def netbeansDir = new java.io.File(rootDir, "tools/netbeans");
+    if (netbeansDir.exists()) {
+        netbeansDir.listFiles().each {
+            def destFile = new java.io.File(rootDir, it.getName())
+            java.nio.file.Files.copy(it.toPath(), destFile.toPath())
+        }
+    }
+}
+
 /**
  * For some reason archetype automatically enables ALL modules definied in the archetype-metadata
  * even if we only want some of them conditionally enabled.  In our case, we only want the common
