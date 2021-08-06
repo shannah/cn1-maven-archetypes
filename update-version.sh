@@ -63,6 +63,16 @@ perl -pi -e "s/^cn1PluginVersion=$oldVersion\$/cn1PluginVersion=$version/g" "$f"
 f=./cn1lib-archetype/src/test/resources/projects/basic/archetype.properties
 perl -pi -e "s/^cn1PluginVersion=$oldVersion\$/cn1PluginVersion=$version/g" "$f"
 
+f=./cn1app-archetype/src/test/resources/projects/netbeans/archetype.properties
+perl -pi -e "s/^cn1Version=$oldVersion\$/cn1Version=$version/g" "$f"
+f=./cn1lib-archetype/src/test/resources/projects/netbeans/archetype.properties
+perl -pi -e "s/^cn1Version=$oldVersion\$/cn1Version=$version/g" "$f"
+
+f=./cn1app-archetype/src/test/resources/projects/netbeans/archetype.properties
+perl -pi -e "s/^cn1PluginVersion=$oldVersion\$/cn1PluginVersion=$version/g" "$f"
+f=./cn1lib-archetype/src/test/resources/projects/netbeans/archetype.properties
+perl -pi -e "s/^cn1PluginVersion=$oldVersion\$/cn1PluginVersion=$version/g" "$f"
+
 echo "Committing version change in git"
 git commit -a -m "Updated version to $version"
 if [[ "$version" == *-SNAPSHOT ]]; then
