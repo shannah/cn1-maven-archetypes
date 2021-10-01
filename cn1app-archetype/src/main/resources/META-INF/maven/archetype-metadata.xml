@@ -5,10 +5,10 @@
 
   <requiredProperties>
     <requiredProperty key="cn1Version">
-      <defaultValue>8.0-SNAPSHOT</defaultValue>
+      <defaultValue>7.0.42</defaultValue>
     </requiredProperty>
     <requiredProperty key="cn1PluginVersion">
-      <defaultValue>8.0-SNAPSHOT</defaultValue>
+      <defaultValue>7.0.42</defaultValue>
     </requiredProperty>
     <requiredProperty key="kotlinVersion">
       <defaultValue>1.3.72</defaultValue>
