@@ -94,6 +94,11 @@
                     <artifactId>annotations</artifactId>
                     <version>13.0</version>
                 </dependency>
+                <dependency>
+                    <groupId>com.codenameone</groupId>
+                    <artifactId>java-runtime</artifactId>
+                    <scope>provided</scope>
+                </dependency>
             </dependencies>
             <build>
                 <plugins>
