@@ -47,6 +47,11 @@
         <dependencies>
             <dependency>
                 <groupId>com.codenameone</groupId>
+                <artifactId>java-runtime</artifactId>
+                <version>${cn1.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codenameone</groupId>
                 <artifactId>codenameone-core</artifactId>
                 <version>${cn1.version}</version>
             </dependency>
