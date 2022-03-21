@@ -394,7 +394,6 @@
                           <executable>java</executable>
                           <longClasspath>true</longClasspath>
                           <arguments>
-                              <argument>-XX:MaxPermSize=128M</argument>
                               <!-- Parameters used for Debugging from NetBeans -->
                               <argument>-Xdebug</argument>
                               <argument>-Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address}</argument>
@@ -500,7 +499,6 @@
                           <executable>java</executable>
                           <longClasspath>true</longClasspath>
                           <arguments>
-                              <argument>-XX:MaxPermSize=128M</argument>
                               <!-- Parameters used for Debugging from NetBeans -->
                               <argument>-Xdebug</argument>
                               <argument>-Xrunjdwp:transport=dt_socket,server=y,address=${jpda.address},suspend=y</argument>
@@ -609,7 +607,6 @@
                           <executable>java</executable>
                           <longClasspath>true</longClasspath>
                           <arguments>
-                              <argument>-XX:MaxPermSize=128M</argument>
                               <argument>-Xmx1024M</argument>
 
                               <!-- The location of CEF.  This property is set in the

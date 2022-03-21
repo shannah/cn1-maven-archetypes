@@ -20,11 +20,11 @@ goto :EOF
 
 goto :EOF
 :settings
-!MVNW! cn:settings -e
+!MVNW! cn1:settings -e
 
 goto :EOF
 :update
-!MVNW! cn:update -U -e
+!MVNW! cn1:update -U -e
 
 goto :EOF
 :help

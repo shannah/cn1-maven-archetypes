@@ -116,7 +116,6 @@
                           <executable>java</executable>
                           <longClasspath>true</longClasspath>
                           <arguments>
-                              <argument>-XX:MaxPermSize=128M</argument>
                               <argument>-Xmx1024M</argument>
                               <argument>-Dcef.dir=${cef.dir}</argument>
                               <argument>-Dcodename1.designer.jar=${codename1.designer.jar}</argument>

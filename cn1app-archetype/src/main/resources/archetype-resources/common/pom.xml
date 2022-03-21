@@ -185,7 +185,6 @@
                             <executable>java</executable>
                             <longClasspath>true</longClasspath>
                             <arguments>
-                                <argument>-XX:MaxPermSize=128M</argument>
                                 <argument>-Xmx1024M</argument>
                                 <!--<argument>-Xdebug</argument>
                                 <argument>-Xrunjdwp:transport=dt_socket,address=8888,server=y,suspend=n</argument>-->
