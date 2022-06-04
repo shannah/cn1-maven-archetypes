@@ -1010,7 +1010,7 @@ You can proceed to open and build the project in Android Studio.
 [#android-server-builds]
 ==== Using the Codename One Build Server
 
-The Codename One build server will generate an Android app (.apk and .aab) that you can install directly onto your Android device for debugging, or that you can submit to the Google play store.  Unlike the <<android-local-builds, local build option>>, it doesn't require you to install any development tools on your computer beyond the basic JDK install.  Android builds are available with a free Codename One account, which you can create at https://cloud.codenameone.com.
+The Codename One build server will generate an Android app (.apk and .aab) that you can install directly onto your Android device for debugging, or that you can submit to the Google play store.  Unlike the <<android-local-builds, local build option>>, it doesn't require you to install any development tools on your computer beyond the basic JDK install.  Android builds are available with a free Codename One account, which you can create at https://www.codenameone.com.
 
 ===== Command-line
 ++++
@@ -1229,7 +1229,7 @@ After you submit the build, you can follow the progress on the Codename One buil
 [#windows-uwp]
 === Windows UWP Builds
 
-NOTE: Windows UWP Builds use the Codename One build server, and are available with a free Codename One account.  You can sign up https://cloud.codenameone.com[here].
+NOTE: Windows UWP Builds use the Codename One build server, and are available with a free Codename One account.  You can sign up https://www.codenameone.com[here].
 
 The Windows UWP build target will produce an application that can be installed on all windows 10 devices (phones, tablets, laptops, and desktops), and can be distributed via the Windows app store.  Since this build target uses the Codename One build server, it doesn't require any special software to be installed on your build machine beyond the standard JDK.
 
@@ -1520,7 +1520,7 @@ This is the provionsing profile used for your production iOS builds.
 [#build-app]
 == Using the Codename One Build App
 
-After you submit a build to the Codename One build server, you are asked to follow the build progress at https://cloud.codenameone.com
+After you submit a build to the Codename One build server, you are asked to follow the build progress at https://cloud.codenameone.com/secure/index.html
 
 When you log in, you should see a list of your recent builds as follows:
 
