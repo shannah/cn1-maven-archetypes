@@ -23,12 +23,6 @@ The _tools/eclipse_ directory contains eclipse ".launch" files that will add com
 
 == NetBeans Users
 
-IMPORTANT: If you use NetBeans as your IDE, **read this first**
-
-The _tools/netbeans_ directory contains netbeans configuration files that are necessary for NetBeans to work properly with this project.
-
-**You should copy these files into the project root directory before opening the project into NetBeans**
-
 This project is a multi-module Maven project that was generated from a Maven archetype.
 
 == IntelliJ Users

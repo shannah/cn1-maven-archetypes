@@ -156,8 +156,6 @@ See <<first-run-in-simulator>> for the expected result.
 <env netbeans ></env>
 ++++
 
-IMPORTANT: Before opening the project in NetBeans, you need to copy the contents of the _tools/netbeans_ directory into the root project directory. These files are required by NetBeans to build, run, and debug the project correctly.
-
 NetBeans supports Maven projects natively.  You can open the project directly in NetBeans using it's `File` > `Open Project...` option.
 
 After the project is open, you can run the app by pressing the green "run" icon (
