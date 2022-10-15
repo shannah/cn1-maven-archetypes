@@ -120,53 +120,5 @@
       </fileSets>
     </module>
     <module id="${rootArtifactId}-lib" dir="lib" name="${rootArtifactId}-lib" />
-    <module id="${rootArtifactId}-tests" dir="tests" name="${rootArtifactId}-tests">
-      <fileSets>
-        <fileSet encoding="UTF-8">
-          <directory>.mvn</directory>
-          <includes>
-            <include>**/*.config</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory>cn1libs</directory>
-          <includes>
-            <include>**</include>
-          </includes>
-        </fileSet>
-      </fileSets>
-      <modules>
-        <module id="${rootArtifactId}-tests-common" dir="common" name="${rootArtifactId}-tests-common">
-          <fileSets>
-            <fileSet filtered="true" packaged="true" encoding="UTF-8">
-              <directory>src/main/java</directory>
-              <includes>
-                <include>**/*.java</include>
-              </includes>
-            </fileSet>
-            <fileSet encoding="UTF-8">
-              <directory>src/main/css</directory>
-              <includes>
-                <include>**/*.css</include>
-              </includes>
-            </fileSet>
-            <fileSet filtered="true" packaged="true" encoding="UTF-8">
-              <directory>src/test/java</directory>
-              <includes>
-                <include>**/*.java</include>
-              </includes>
-            </fileSet>
-            <fileSet filtered="true" encoding="UTF-8">
-              <directory></directory>
-              <includes>
-                <include>codenameone_settings.properties</include>
-                <include>nbactions.xml</include>
-              </includes>
-            </fileSet>
-          </fileSets>
-        </module>
-        <module id="${rootArtifactId}-tests-javase" dir="javase" name="${rootArtifactId}-tests-javase" />
-      </modules>
-    </module>
   </modules>
 </archetype-descriptor>
