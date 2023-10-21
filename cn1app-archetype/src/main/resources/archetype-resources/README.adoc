@@ -21,6 +21,15 @@ The _tools/eclipse_ directory contains eclipse ".launch" files that will add com
 
 **After importing this project into Eclipse, you should import the launch files.**
 
+=== Additional Steps for CodeRAD projects
+
+CodeRAD includes an annotation processor that needs to be activated. There are a few additional steps required to enable this in Eclipse.
+
+. Add `org.eclipse.m2e.apt.mode=jdt_apt` to the `./common/.settings/org.eclipse.m2e.apt.prefs`
+. Add `target/generated-sources/rad-views` to the .classpath.
+
+See https://github.com/codenameone/CodenameOne/issues/3724[this issue] for more details.
+
 == NetBeans Users
 
 This project is a multi-module Maven project that was generated from a Maven archetype.
