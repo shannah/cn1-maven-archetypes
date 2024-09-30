@@ -1,4 +1,3 @@
-@Grab(group="org.codehaus.groovy", module="groovy-all", version="2.4.16")
 import static groovy.io.FileType.*
 import java.nio.file.Path
 
