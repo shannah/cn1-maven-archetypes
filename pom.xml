@@ -6,8 +6,6 @@
     <artifactId>maven-archetypes</artifactId>
     <version>8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
-
     <name>Codename One Maven Archetypes</name>
     <description>Maven archetypes for Codename One</description>
     <url>https://github.com/shannah/cn1-maven-archetypes</url>
@@ -34,22 +32,10 @@
         <url>https://github.com/shannah/cn1-maven-archetypes</url>
         <connection>scm:git:git@github.com:shannah/cn1-maven-archetypes.git</connection>
     </scm>
-
     <modules>
         <module>cn1app-archetype</module>
         <module>cn1lib-archetype</module>
-
-
     </modules>
-
-    <distributionManagement>
-        <repository>
-            <id>nexus-staging</id>
-            <name>Nexus Release Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <build>
         <plugins>
             <plugin>
@@ -64,10 +50,18 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.7.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
-
     <profiles>
         <profile>
             <id>generate-archetypes</id>
@@ -118,6 +112,4 @@
             </build>
         </profile>
     </profiles>
-
-
 </project>
