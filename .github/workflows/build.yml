@@ -21,7 +21,7 @@ jobs:
         cache: maven
 
     - name: Build cn1app-archetype
-      run: mvn -B clean install --file cn1app-archetype/pom.xml
+      run: mvn -B clean install --file cn1app-archetype/pom.xml -Dcn1Version=7.0.193 -Dcn1PluginVersion=7.0.193
 
     - name: Build cn1lib-archetype
-      run: mvn -B clean install --file cn1lib-archetype/pom.xml
+      run: mvn -B clean install --file cn1lib-archetype/pom.xml -Dcn1Version=7.0.193 -Dcn1PluginVersion=7.0.193
