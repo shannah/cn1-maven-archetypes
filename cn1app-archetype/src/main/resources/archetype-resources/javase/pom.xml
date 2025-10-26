@@ -300,7 +300,7 @@
           <id>test</id>
           <activation>
               <property>
-                      <name>!skipTests</name>
+                      <name>true</name>
               </property>
           </activation>
           <properties>
