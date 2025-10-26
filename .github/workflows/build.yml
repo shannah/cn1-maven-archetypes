@@ -20,13 +20,16 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Install xvfb
+      run: sudo apt-get update && sudo apt-get install -y xvfb
+
     - name: Update test properties to use stable Codename One version
       run: |
         find . -name "archetype.properties" -type f -exec sed -i 's/cn1Version=8.0-SNAPSHOT/cn1Version=7.0.193/g' {} +
         find . -name "archetype.properties" -type f -exec sed -i 's/cn1PluginVersion=8.0-SNAPSHOT/cn1PluginVersion=7.0.193/g' {} +
 
     - name: Build cn1app-archetype
-      run: mvn -B clean install --file cn1app-archetype/pom.xml
+      run: xvfb-run -a mvn -B clean install --file cn1app-archetype/pom.xml
 
     - name: Build cn1lib-archetype
-      run: mvn -B clean install --file cn1lib-archetype/pom.xml
+      run: xvfb-run -a mvn -B clean install --file cn1lib-archetype/pom.xml
