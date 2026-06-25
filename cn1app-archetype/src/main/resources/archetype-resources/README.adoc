@@ -4,6 +4,8 @@ This is a multi-module maven project for building a Codename One application. Co
 
 == Getting Started
 
+**Important**: This project can only be built with JDK 11 or JDK 8 (not newer or versions in between). At the moment the iOS xcode target (local iOS build) only supports JDK 8. 
+
 === Java
 
 If you plan to use Java as your primary language, https://shannah.github.io/cn1-maven-archetypes/cn1app-archetype-tutorial/getting-started.html[start here].
